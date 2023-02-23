@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,31 +11,51 @@
 
     <script src="./js/app.js" type="module" defer></script>
     <link rel="stylesheet" href="./style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="userData">
-            <img class="userImg" src="./assets/me (2).png" alt="" />
-          </div>
+    <div class="container">
+      <nav class="navigation">
+        <img src="./assets/logo.svg" alt="" />
         <ul>
-          <li><a href="#">Projeto 1</a></li>
-          <li><a href="#">Projeto 2</a></li>
-          <li><a href="#">Projeto 3</a></li>
-          <li><a href="#">Projeto 4</a></li>
-          <li><a href="#">Projeto 5</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Resumo</a></li>
+          <li><a href="#">Projetos</a></li>
+          <li><a href="#">Certificados</a></li>
+          <button>Contato</button>
         </ul>
-
-        <input 
-        id="input-search" 
-        type="text"
-        placeholder="Usuário do Github"
-        oninput="this.value = this.value.toLowerCase()"
-        >
       </nav>
-      <div class="menu-toggle">
-        <button class="button-toggle">Menu</button>
-      </div>
-    </header>
+      <section class="wrapperContent">
+        <div>
+          <span>chef</span>
+          <h1>Web Development</h1>
+          <h3>Design & Development</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minus
+            id odit ab praesentium deserunt nostrum et fugit dolorem,
+            repudiandae iste, atque eaque veritatis officiis asperiores
+            perferendis animi placeat temporibus.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nihil
+            adipisci iste recusandae harum sunt voluptatibus esse suscipit
+            pariatur dolore ea dignissimos, rerum delectus dicta accusamus
+            tempore aperiam. Quas, nam.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            quis omnis aperiam est dolorum ea rem eveniet tempora. Aliquid
+            debitis quae suscipit veritatis. Ullam, natus explicabo! Neque fuga
+            a quidem.
+          </p>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
