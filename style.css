@@ -12,13 +12,20 @@
 
     --bg-btn-primary: hsla(267, 51%, 26%, 1);
 
+    --clr-txt-primary: hsla(0, 0%, 91%, 1);
+
+    --clr-span : hsla(277, 34%, 34%, 1);
+    --clr-h3: hsla(0, 0%, 34%, 1);
+
+
+
 }
 
 body {
     background:
         hsla(257, 36%, 16%, 1) url(./assets/backgroundImage.png) no-repeat top left;
     font-size: 1.6rem;
-    color: white;
+    color: var(--clr-txt-primary);
 }
 
 body,
@@ -87,6 +94,23 @@ button {
     grid-area: wrapperContent;
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
-    width: 57.8rem;
+    /* border: 1px solid blue; */
+    width: 65rem;
+}
+
+.wrapperContent span{
+    color: var(--clr-span);
+    font-weight: bold;
+}
+
+.wrapperContent h1{
+    font-weight: bold;
+}
+
+.wrapperContent h3{
+    color: #575757;
+}
+
+.wrapperContent span, h1, h3, p {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

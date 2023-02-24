@@ -15,23 +15,23 @@ export class Effects {
                     shuffledText += characters.splice(
                         Math.floor(Math.random() * characters.length),
                         1
-                    );
+                    )
                 }
                 element.textContent = shuffledText;
             }
 
             // inicia o embaralhamento
-            const intervalId = setInterval(shuffleText, 5); // a cada 5 milissegundos
+            const intervalId = setInterval(shuffleText, 1) // a cada 5 milissegundos
 
             // faz o texto voltar ao normal após o tempo de embaralhamento
             setTimeout(() => {
-                clearInterval(intervalId);
-                element.textContent = text;
-            }, shuffleTime);
+                clearInterval(intervalId)
+                element.textContent = text
+            }, shuffleTime)
         });
     }
 
-    fadeIn(duration = 500) {
+    fadeIn(duration = 200) {
         this.elements.forEach((element) => {
             element.style.opacity = 0;
 
