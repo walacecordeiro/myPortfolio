@@ -1,7 +1,9 @@
+import { Effects } from "./effects.js"
+
 export class Router {
     routes = {}
-    
-    add(routeName, page){
+
+    add(routeName, page) {
         this.routes[routeName] = page
     }
 
@@ -22,6 +24,11 @@ export class Router {
             .then(data => data.text())
             .then(html => {
                 document.querySelector('.wrapperContent').innerHTML = html
+
+                const effect = new Effects(document.querySelectorAll("p, span, h1, h3"))
+
+                effect.shuffle()
+                effect.fadeIn()
             })
     }
 

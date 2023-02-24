@@ -89,14 +89,4 @@ button {
     flex-direction: column;
     border: 1px solid blue;
     width: 57.8rem;
-    animation: toAppear 1s steps(200);
 }
-  
-  @keyframes toAppear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 100%;
-    }
-  }
