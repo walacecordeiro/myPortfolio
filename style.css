@@ -67,7 +67,7 @@ button {
     filter: drop-shadow(0px 8px 8px #A60AC7);
 }
 
-.navigation button {
+.navigation #btnContact {
     padding: .8rem 3.2rem;
     background: var(--bg-btn-primary);
     border: none;
@@ -79,13 +79,14 @@ button {
     transition: .1s;
 }
 
-.navigation button:hover {
+.navigation #btnContact:hover {
     box-shadow: 0px 8px 10px #A60AC7;
 }
 
 .wrapperContent {
     grid-area: wrapperContent;
     display: flex;
+    flex-direction: column;
     border: 1px solid blue;
     width: 57.8rem;
     animation: toAppear 1s steps(200);

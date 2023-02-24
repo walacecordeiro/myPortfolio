@@ -73,7 +73,6 @@ shuffle()
 linkNav.forEach(function(linkNav) {
     linkNav.addEventListener('click', function(event) {
       event.preventDefault();
-      console.log('Link clicado!');
       shuffle()
     });
   });

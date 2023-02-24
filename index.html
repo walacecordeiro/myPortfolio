@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script src="./js/app.js" type="module" defer></script>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./js/index.js" type="module" defer></script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Alata&family=Lato:wght@400;700&display=swap"
@@ -22,16 +22,22 @@
       <nav class="navigation">
         <img src="./assets/logo.svg" alt="" />
         <ul>
-          <li><a class="linkNav" href="#" data-route="about">Sobre</a></li>
-          <li><a class="linkNav" href="#" data-route="resume">Resumo</a></li>
-          <li><a class="linkNav" href="#" data-route="projects">Projetos</a></li>
-          <li><a class="linkNav" href="#" data-route="certificates">Certificados</a></li>
-          <button>Contato</button>
+          <li><a class="linkNav" href="/" onclick="route()">Sobre</a></li>
+          <li>
+            <a class="linkNav" href="/resume" onclick="route()">Resumo</a>
+          </li>
+          <li>
+            <a class="linkNav" href="/projects" onclick="route()">Projetos</a>
+          </li>
+          <li>
+            <a class="linkNav" href="/certificates" onclick="route()"
+              >Certificados</a
+            >
+          </li>
+          <a id="btnContact" href="/contact" onclick="route()">Contato</a>
         </ul>
       </nav>
-      <div class="wrapperContent slide">
-        
-      </div>
+      <div class="wrapperContent slide"></div>
     </div>
   </body>
 </html>
