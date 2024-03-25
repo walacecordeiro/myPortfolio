@@ -1,16 +1,36 @@
 @import "variables";
 
 .main {
-  //padding-top: clamp(1rem, 4vw, 6rem);
-}
+ display: flex;
+ flex-direction: column;
+ gap: 4rem;
 
+ .myInfo {
+  background-color: red;
+  padding: clamp(1rem, 4vw, 6rem);
+
+  .text {
+   width: 68.8rem;
+   background-color: chartreuse;
+  }
+ }
+
+ .myProjects {
+  h3 {
+   padding-left: clamp(1rem, 4vw, 6rem);
+  }
+
+  .cards {
+    background-color: chocolate;
+    height: 50rem;
+  }
+ }
+}
 
 /* Mobile */
 @media (max-width: 700px) {
-  
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
-  
 }

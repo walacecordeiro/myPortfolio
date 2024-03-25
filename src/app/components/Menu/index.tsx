@@ -1,36 +1,45 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 import { AiFillHome } from "react-icons/ai";
-import { FaUserAstronaut, FaPencilRuler } from "react-icons/fa";
-import { MdMarkEmailUnread } from "react-icons/md";
+import { FaUserAstronaut, FaPencilRuler, FaLinkedin } from "react-icons/fa";
+import { MdContactMail } from "react-icons/md";
+
+import style from "./style.module.scss";
 
 export default function Menu() {
  const menu = [
   {
    name: "Início",
+   link: "/",
    icon: <AiFillHome className="icons" />,
-   dis: "translate-y-0",
-   act: "bg-red-500",
+   dis: "distance0",
   },
   {
    name: "Sobre",
+   link: "/sobre",
    icon: <FaUserAstronaut className="icons" />,
-   dis: "translate-y-16",
-   act: "bg-red-500",
+   dis: "distance1",
   },
   {
    name: "Projetos",
+   link: "/projetos",
    icon: <FaPencilRuler className="icons" />,
-   dis: "translate-y-32",
-   act: "bg-red-500",
+   dis: "distance2",
   },
   {
    name: "Contato",
-   icon: <MdMarkEmailUnread className="icons" />,
-   dis: "translate-y-48",
-   act: "bg-red-500",
+   link: "/contato",
+   icon: <MdContactMail className="icons" />,
+   dis: "distance3",
+  },
+  {
+   name: "Meu Linkedin",
+   link: "https://www.linkedin.com/in/walace-cordeiro-dos-santos/",
+   icon: <FaLinkedin className="icons" />,
+   dis: "distance4",
   },
  ];
 
@@ -38,66 +47,83 @@ export default function Menu() {
  const [hover, setHover] = useState(-1);
 
  return (
-  <div
-   className={`
-           bg-gradient-to-b from-gray-800 to-gray-900
-           max-w-fit rounded-full py-1 px-1
-           shadow-lg shadow-black backdrop-blur-md
-        `}
-  >
-   <ul className={`flex flex-col items-center relative gap-y-2`}>
-    <span
-     id="light"
-     className={`
-            bg-gray-600 duration-500 w-14 h-14 rounded-full blur-md
-            absolute -z-10 ${menu[active].dis}
-          `}
-    ></span>
+  <nav className={style["nav"]}>
+   <ul>
+    <span className={`${style["light"]} ${style[`${menu[active].dis}`]}`}></span>
+
+    <div className={`${style["dot"]} ${style[`${menu[active].dis}`]}`}></div>
+
     {menu.map((menu, i) => (
-     <li
-      key={i}
-      className={`
-                flex justify-center items-center 
-                w-14 h-14 rounded-full
-                transition duration-500
-
-                ${active === i ? "bg-transparent cursor-default" : ""}
-                ${hover === i ? `bg-gray-700` : ""}
-               
-            `}
-     >
-      <a
-       className={`flex items-center`}
-       onClick={() => setActive(i)}
-       onMouseEnter={() => setHover(i)}
-       onMouseLeave={() => setHover(-1)}
+     <React.Fragment key={i}>
+      <li
+       key={i}
+       className={`
+      ${active === i ? `${style["activeLi"]}` : ""}
+      ${hover === i ? `${style["hoverLi"]}` : ""}
+      `}
       >
-       <span
-        className={`
-                    cursor-pointer flex flex-col items-center text-gray-400 gap-1
-                    ${active === i ? "text-gray-100 duration-700 cursor-default" : ""}
-                `}
-       >
-        {menu.icon}
-       </span>
-       <span
-        className={`
-                    absolute pointer-events-none
-                ${active === i ? "translate-x-12 duration-500 opacity-100" : ""}
-
-                ${
-                 hover === i
-                  ? "translate-x-14 duration-500 opacity-100"
-                  : "opacity-0 translate-x-20"
-                }
-              `}
-       >
-        {menu.name}
-       </span>
-      </a>
-     </li>
+       {i < 4 ? (
+        <Link href={menu.link} legacyBehavior>
+         <a
+          onClick={() => {
+           if (i < 4) setActive(i);
+          }}
+          onMouseEnter={() => setHover(i)}
+          onMouseLeave={() => setHover(-1)}
+         >
+          <span
+           className={`
+        ${style["icon"]}
+        ${active === i ? `${style["activeIcon"]}` : ""}
+        `}
+          >
+           {menu.icon}
+          </span>
+          <span
+           className={`
+        ${style["menuName"]}
+        ${active === i ? `${style["activeName"]}` : ""}
+        ${hover === i ? `${style["hoverName"]}` : ""}
+        `}
+          >
+           {menu.name}
+          </span>
+         </a>
+        </Link>
+       ) : (
+        <a
+         href={menu.link}
+         target="_blank"
+         onClick={() => {
+          if (i < 4) setActive(i);
+         }}
+         onMouseEnter={() => setHover(i)}
+         onMouseLeave={() => setHover(-1)}
+        >
+         <span
+          className={`
+        ${style["icon"]}
+        ${active === i ? `${style["activeIcon"]}` : ""}
+        `}
+         >
+          {menu.icon}
+         </span>
+         <span
+          className={`
+        ${style["menuName"]}
+        ${active === i ? `${style["activeName"]}` : ""}
+        ${hover === i ? `${style["hoverName"]}` : ""}
+        `}
+         >
+          {menu.name}
+         </span>
+        </a>
+       )}
+      </li>
+      {i === 3 && <div className={style["divider"]}></div>}
+     </React.Fragment>
     ))}
    </ul>
-  </div>
+  </nav>
  );
 }

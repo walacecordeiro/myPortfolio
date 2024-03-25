@@ -12,12 +12,14 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
  return (
-  <html lang="pt-br">
-   <body className="layout">
-    <div className="navigation"><Menu /></div>
-    <div className="project">{children}</div>
-    <div className="ads"></div>
-    <div className="footer"></div>
+  <html lang="pt-br" suppressHydrationWarning={true}>
+   <body className="layout" suppressHydrationWarning={true}>
+    <div className="navigation">
+     <Menu />
+    </div>
+    <div className="page">{children}</div>
+    <video controls disablePictureInPicture controlsList="nodownload" autoPlay={true} src="/videoTemp.mp4" title="vídeo sobre algo" className="video"></video>
+    <footer className="footer"></footer>
    </body>
   </html>
  );
