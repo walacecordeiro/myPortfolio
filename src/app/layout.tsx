@@ -18,8 +18,19 @@ export default function RootLayout({
      <Menu />
     </div>
     <div className="page">{children}</div>
-    <video controls disablePictureInPicture controlsList="nodownload" autoPlay={true} src="/videoTemp.mp4" title="vídeo sobre algo" className="video"></video>
-    <footer className="footer"></footer>
+
+    <div className="videoWrapper">
+     <video
+      controls
+      disablePictureInPicture
+      controlsList="nodownload"
+      autoPlay={true}
+      src="/videoTemp.mp4"
+      title="vídeo sobre algo"
+      className="video"
+     ></video>
+     <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
    </body>
   </html>
  );
