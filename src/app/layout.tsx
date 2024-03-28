@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import Menu from "./components/Menu";
+import VideoFixed from "./components/videoFixed";
 
 export const metadata: Metadata = {
  title: "Meu portfólio",
@@ -18,19 +19,6 @@ export default function RootLayout({
      <Menu />
     </div>
     <div className="page">{children}</div>
-
-    <div className="videoWrapper">
-     <video
-      controls
-      disablePictureInPicture
-      controlsList="nodownload"
-      autoPlay={true}
-      src="/videoTemp.mp4"
-      title="vídeo sobre algo"
-      className="video"
-     ></video>
-     <p>Lorem ipsum dolor sit amet consectetur.</p>
-    </div>
    </body>
   </html>
  );

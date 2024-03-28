@@ -7,7 +7,20 @@
  width: 100%;
 
  h3 {
-  padding-left: clamp(1rem, 4vw, 6rem);
+  padding-left: 12rem;
   animation: slideInFromBottom 0.6s ease backwards 0.6s;
  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+ .myProjects {
+  h3 {
+    padding-left: 4rem !important;
+  }
+ }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
 }

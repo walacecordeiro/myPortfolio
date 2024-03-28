@@ -2,6 +2,7 @@ import styles from "./page.module.scss";
 
 import Slide from "./components/Slide";
 import Section from "./components/Section";
+import VideoFixed from "./components/videoFixed";
 
 export default function Home() {
  return (
@@ -17,6 +18,7 @@ export default function Home() {
        front-end funcionais, mas esteticamente agradáveis.
       </p>
      </div>
+     <VideoFixed />
     </section>
 
     <Section title="Projetos">
