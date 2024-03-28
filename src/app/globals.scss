@@ -58,7 +58,7 @@ a {
  }
 
  .page {
-  padding: 4rem 0;
+  padding: 4rem 0 8rem 0;
   overflow: auto;
   scrollbar-width: none;
 
@@ -69,6 +69,26 @@ a {
 }
 
 @media (max-width: 700px) {
+ h1 {
+  font-size: 4rem !important;
+ }
+
+ h2 {
+  font-size: 3.5rem !important;
+ }
+
+ h3 {
+  font-size: 3rem !important;
+ }
+
+ h4 {
+  font-size: 2rem !important;
+ }
+
+ p {
+  font-size: 1.4rem !important;
+ }
+ 
  .navigation {
   bottom: 0;
   margin: 0 !important;
