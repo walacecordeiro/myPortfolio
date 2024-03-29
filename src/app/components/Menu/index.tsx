@@ -10,18 +10,14 @@ export default function Menu() {
  const [hover, setHover] = useState(-1);
 
  const [active, setActive] = useState(() => {
-  if (typeof window !== "undefined") {
-   const sevedActive = localStorage.getItem("active");
-   return sevedActive !== null ? Number(sevedActive) : 0;
-  } else {
-   return 0;
-  }
+  "use client";
+  const sevedActive = localStorage.getItem("active");
+  return sevedActive !== null ? Number(sevedActive) : 0;
  });
 
  useEffect(() => {
-  if (typeof window !== "undefined") {
-   localStorage.setItem("active", active.toString());
-  }
+  "use client";
+  localStorage.setItem("active", active.toString());
  }, [active]);
 
  return (
