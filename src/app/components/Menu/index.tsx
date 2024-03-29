@@ -8,17 +8,20 @@ import style from "./style.module.scss";
 
 export default function Menu() {
  const [hover, setHover] = useState(-1);
-
- const [active, setActive] = useState(() => {
-  "use client";
-  const sevedActive = localStorage.getItem("active");
-  return sevedActive !== null ? Number(sevedActive) : 0;
- });
+ const [active, setActive] = useState(0);
+ const [isInitialized, setIsInitialized] = useState(false);
 
  useEffect(() => {
-  "use client";
-  localStorage.setItem("active", active.toString());
- }, [active]);
+   if (!isInitialized) {
+     const savedActive = localStorage.getItem("active");
+     if (savedActive !== null) {
+       setActive(Number(savedActive));
+     }
+     setIsInitialized(true);
+   } else {
+     localStorage.setItem("active", active.toString());
+   }
+ }, [active, isInitialized]);
 
  return (
   <nav className={style["nav"]}>
