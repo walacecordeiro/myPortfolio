@@ -1,50 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
-import { AiFillHome } from "react-icons/ai";
-import { FaUserAstronaut, FaPencilRuler, FaLinkedin } from "react-icons/fa";
-import { MdContactMail } from "react-icons/md";
+import { menu } from "./menuData";
 
 import style from "./style.module.scss";
 
 export default function Menu() {
- const menu = [
-  {
-   name: "Início",
-   link: "/",
-   icon: <AiFillHome className="icons" />,
-   dis: "distance0",
-  },
-  {
-   name: "Sobre",
-   link: "/sobre",
-   icon: <FaUserAstronaut className="icons" />,
-   dis: "distance1",
-  },
-  {
-   name: "Projetos",
-   link: "/projetos",
-   icon: <FaPencilRuler className="icons" />,
-   dis: "distance2",
-  },
-  {
-   name: "Contato",
-   link: "/contato",
-   icon: <MdContactMail className="icons" />,
-   dis: "distance3",
-  },
-  {
-   name: "Meu Linkedin",
-   link: "https://www.linkedin.com/in/walace-cordeiro-dos-santos/",
-   icon: <FaLinkedin className="icons" />,
-   dis: "distance4",
-  },
- ];
-
- const [active, setActive] = useState(0);
  const [hover, setHover] = useState(-1);
+
+ const [active, setActive] = useState(() => {
+  const sevedActive = localStorage.getItem("active");
+  return sevedActive !== null ? Number(sevedActive) : 0;
+ });
+
+ useEffect(() => {
+  localStorage.setItem("active", active.toString());
+ }, [active]);
 
  return (
   <nav className={style["nav"]}>
