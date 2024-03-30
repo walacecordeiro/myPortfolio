@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.scss";
+import "./styles/globals.scss"
+import "./layout.scss"
 import Menu from "./components/Menu";
-import VideoFixed from "./components/videoFixed";
 
 export const metadata: Metadata = {
  title: "Meu portfólio",

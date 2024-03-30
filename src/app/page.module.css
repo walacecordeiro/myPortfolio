@@ -1,0 +1,55 @@
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.main .myInfo {
+  display: flex;
+  padding-left: 12rem;
+  animation: fadeIn 0.9s ease;
+}
+.main .myInfo .text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .myInfo {
+    flex-direction: column-reverse;
+    padding: 0 2rem !important;
+  }
+}
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .myInfo {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=page.module.css.map */

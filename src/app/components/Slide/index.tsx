@@ -53,21 +53,21 @@ export default function Slide() {
    <a href="#" className={styles["cards"]}>
     <img src="/designProject.png" alt="" />
     <div className={styles["description"]}>
-     <h4>Design</h4>
+     <h6>Design</h6>
      <p>Meu primeiro projeto</p>
     </div>
    </a>
    <a href="#" className={styles["cards"]}>
     <img src="/designProject.png" alt="" />
     <div className={styles["description"]}>
-     <h4>Design</h4>
+     <h6>Design</h6>
      <p>Meu primeiro projeto</p>
     </div>
    </a>
    <a href="#" className={styles["cards"]}>
     <img src="/designProject.png" alt="" />
     <div className={styles["description"]}>
-     <h4>Design</h4>
+     <h6>Design</h6>
      <p>Meu primeiro projeto</p>
     </div>
    </a>

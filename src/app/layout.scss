@@ -1,0 +1,33 @@
+.layout {
+ position: relative;
+ display: flex;
+ width: 100vw;
+ height: 100vh;
+
+ .navigation {
+  position: fixed;
+  margin: 2rem;
+  z-index: 2;
+ }
+
+ .page {
+  padding: 4rem 0 8rem 0;
+  overflow: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+   display: none;
+  }
+ }
+}
+
+@media (max-width: 700px) {
+ .navigation {
+  bottom: 0;
+  margin: 0 !important;
+ }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+}

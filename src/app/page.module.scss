@@ -1,9 +1,8 @@
-@import "variables";
+@use "../app/styles/variables";
+@use "../app/styles/mixins";
 
 .main {
- display: flex;
- flex-direction: column;
- gap: 4rem;
+ @include mixins.flex-column-gap(4rem);
 
  .myInfo {
   display: flex;
@@ -11,9 +10,7 @@
   animation: fadeIn 0.9s ease;
 
   .text {
-   display: flex;
-   flex-direction: column;
-   gap: 2rem;
+   @include mixins.flex-column-gap(2rem);
   }
  }
 }

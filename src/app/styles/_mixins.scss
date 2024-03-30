@@ -1,0 +1,149 @@
+@use "../styles/variables";
+
+@mixin fs-fc() {
+ h1 {
+  color: variables.$clr-white;
+  font-size: 4.8rem;
+ }
+
+ h2 {
+  color: variables.$clr-white;
+  font-size: 4.2rem;
+ }
+
+ h3 {
+  color: variables.$clr-white;
+  font-size: 3.6rem;
+ }
+
+ h4 {
+  font-size: 3rem;
+ }
+
+ h5 {
+  font-size: 2.4rem;
+ }
+
+ h6 {
+  color: variables.$clr-white-8;
+  font-size: 1.8rem;
+ }
+
+ p {
+  font-size: 1.6rem;
+  color: variables.$clr-white-6;
+
+  strong {
+   color: variables.$clr-white;
+  }
+ }
+
+ // mobile
+ @media (max-width: 700px) {
+  h1 {
+   font-size: 3.6rem;
+  }
+
+  h2 {
+   font-size: 3.2rem;
+  }
+
+  h3 {
+   font-size: 2.8rem;
+  }
+
+  h4 {
+   font-size: 2.4rem;
+  }
+
+  h5 {
+   font-size: 2rem;
+  }
+
+  h6 {
+   font-size: 1.6rem;
+  }
+
+  p {
+   font-size: 1.4rem;
+  }
+ }
+}
+
+@mixin menuResponsiveDistances() {
+ .distance0 {
+  transform: translateY(0.1rem);
+ }
+
+ .distance1 {
+  transform: translateY(4.6rem);
+ }
+
+ .distance2 {
+  transform: translateY(9rem);
+ }
+
+ .distance3 {
+  transform: translateY(13.5rem);
+ }
+
+ .distance4 {
+  transform: translateY(18.6rem);
+ }
+
+ @media (max-width: 700px) {
+  .distance0 {
+   transform: translateX(-9.4rem);
+  }
+
+  .distance1 {
+   transform: translateX(-4.9rem);
+  }
+
+  .distance2 {
+   transform: translateX(-0.4rem);
+  }
+
+  .distance3 {
+   transform: translateX(4.1rem);
+  }
+
+  .distance4 {
+   transform: translateX(18.6rem);
+  }
+
+  .menuName {
+   display: none;
+  }
+ }
+}
+
+@mixin flex-alignIC-justifyCC($display: "") {
+ display: $display;
+ align-items: center;
+ justify-content: center;
+}
+
+@mixin flex-column-gap($gap: 0) {
+ display: flex;
+ flex-direction: column;
+ gap: $gap;
+}
+
+@mixin flex-row-gap($gap: 0) {
+ display: flex;
+ flex-direction: row;
+ gap: $gap;
+}
+
+@mixin wdth-hght-borderRD($width: "", $height: "", $borderRD: 0) {
+ width: $width;
+ height: $width;
+ border-radius: $borderRD;
+}
+
+@mixin borderRD-boxSD-padding($borderRD, $boxSD, $padding) {
+ border-radius: $borderRD;
+ box-shadow: $boxSD;
+ padding: $padding;
+}

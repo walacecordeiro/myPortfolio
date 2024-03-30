@@ -1,0 +1,46 @@
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.videoWrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-max-content;
+  height: max-content;
+  align-self: center;
+  border-radius: 0.4rem;
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 1rem, rgba(255, 255, 255, 0) 10rem);
+  margin: 2rem;
+  -webkit-backdrop-filter: blur(4rem);
+          backdrop-filter: blur(4rem);
+}
+.videoWrapper video {
+  border-radius: 0.4rem;
+  height: clamp(20rem, 20vw, 25rem);
+  margin: 0.1rem;
+}
+.videoWrapper p {
+  padding: 1.1rem 2rem;
+}/*# sourceMappingURL=style.module.css.map */

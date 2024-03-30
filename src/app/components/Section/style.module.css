@@ -1,0 +1,44 @@
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.myProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+}
+.myProjects h3 {
+  padding-left: 12rem;
+  animation: slideInFromBottom 0.6s ease backwards 0.6s;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .myProjects h3 {
+    padding-left: 2rem !important;
+  }
+}
+/* Tablet and Smaller Desktop *//*# sourceMappingURL=style.module.css.map */
