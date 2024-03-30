@@ -22,7 +22,10 @@ export default function Home() {
     <VideoFixed />
    </section>
 
-   <Section title="Projetos">
+   <Section title="Projetos em destaque">
+    <Slide highlight/>
+   </Section>
+   <Section title="Todos meus projetos">
     <Slide />
    </Section>
   </main>

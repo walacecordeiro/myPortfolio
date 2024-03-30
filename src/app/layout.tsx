@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./styles/globals.scss"
-import "./layout.scss"
+import "./styles/globals.scss";
+import "./layout.scss";
 import Menu from "./components/Menu";
 
 export const metadata: Metadata = {
@@ -15,9 +15,7 @@ export default function RootLayout({
  return (
   <html lang="pt-br" suppressHydrationWarning={true}>
    <body className="layout" suppressHydrationWarning={true}>
-    <div className="navigation">
-     <Menu />
-    </div>
+    <Menu />
     <div className="page">{children}</div>
    </body>
   </html>

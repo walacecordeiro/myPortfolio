@@ -2,12 +2,20 @@
 
 import React, { useRef, useState } from "react";
 import styles from "./style.module.scss";
+import { projects } from "./projectsData";
 
-export default function Slide() {
+type SlideProps = {
+ highlight?: boolean;
+};
+
+export default function Slide({ highlight }: SlideProps) {
  const [isDown, setIsDown] = useState(false);
  const [startX, setStartX] = useState(0);
  const [scrollLeft, setScrollLeft] = useState(0);
  const [isMoved, setIsMoved] = useState(false);
+
+ const allProjects = projects;
+ const highlightedProjects = projects.filter((project) => project.highlight);
 
  const slider = useRef<HTMLDivElement>(null);
 
@@ -50,27 +58,37 @@ export default function Slide() {
     if (isMoved) e.preventDefault();
    }}
   >
-   <a href="#" className={styles["cards"]}>
-    <img src="/designProject.png" alt="" />
-    <div className={styles["description"]}>
-     <h6>Design</h6>
-     <p>Meu primeiro projeto</p>
-    </div>
-   </a>
-   <a href="#" className={styles["cards"]}>
-    <img src="/designProject.png" alt="" />
-    <div className={styles["description"]}>
-     <h6>Design</h6>
-     <p>Meu primeiro projeto</p>
-    </div>
-   </a>
-   <a href="#" className={styles["cards"]}>
-    <img src="/designProject.png" alt="" />
-    <div className={styles["description"]}>
-     <h6>Design</h6>
-     <p>Meu primeiro projeto</p>
-    </div>
-   </a>
+   {highlight &&
+    highlightedProjects.map((project, i) => (
+     <React.Fragment key={i}>
+      <a href={project.link} className={styles["cards"]}>
+       <div
+        className={styles["imgDiv"]}
+        style={{ backgroundImage: `url(${project.imgSRC})` }}
+       ></div>
+       <div className={styles["description"]}>
+        <h6>{project.title}</h6>
+        <p>{project.description}</p>
+       </div>
+      </a>
+     </React.Fragment>
+    ))}
+
+   {!highlight &&
+    projects.map((project, i) => (
+     <React.Fragment key={i}>
+      <a href={project.link} className={styles["cards"]}>
+       <div
+        className={styles["imgDiv"]}
+        style={{ backgroundImage: `url(${project.imgSRC})` }}
+       ></div>
+       <div className={styles["description"]}>
+        <h6>{project.title}</h6>
+        <p>{project.description}</p>
+       </div>
+      </a>
+     </React.Fragment>
+    ))}
   </div>
  );
 }

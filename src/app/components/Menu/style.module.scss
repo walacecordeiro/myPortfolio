@@ -2,13 +2,16 @@
 @use "../../styles/mixins";
 
 .nav {
+ position: fixed;
+ margin: 2rem;
+ z-index: 2;
  background: linear-gradient(rgba(255, 255, 255, 5%), rgba(255, 255, 255, 0%));
  width: fit-content;
  height: max-content;
 
  @include mixins.borderRD-boxSD-padding(8rem, variables.$box-shadow, 0.3rem);
 
- backdrop-filter: blur(4rem);
+ backdrop-filter: blur(1rem);
 
  @include mixins.flex-alignIC-justifyCC(flex);
 
@@ -33,7 +36,7 @@
 
   .dot {
    transition-duration: 0.2s;
-   @include mixins.wdth-hght-borderRD(.4rem, .4rem, 100%);
+   @include mixins.wdth-hght-borderRD(0.4rem, 0.4rem, 100%);
    background-color: variables.$icon-focus;
    position: absolute;
    top: 3.3rem;
@@ -74,6 +77,7 @@
      background-color: #3b3e47;
      @include mixins.borderRD-boxSD-padding(0.4rem, variables.$box-shadow, 1rem);
      font-size: 1.2rem;
+     color: variables.$clr-white;
 
      position: absolute;
      width: max-content;
@@ -133,5 +137,16 @@
     height: 3rem;
    }
   }
+ }
+}
+
+@media (max-width: 700px) {
+ .nav {
+  bottom: 0;
+  margin: 0 !important;
+
+  border-top: 1px solid #2D2E31;
+  background: #15161aa8;
+  backdrop-filter: blur(1rem);
  }
 }
