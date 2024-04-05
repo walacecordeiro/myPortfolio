@@ -138,7 +138,7 @@
 
 @mixin wdth-hght-borderRD($width: "", $height: "", $borderRD: 0) {
  width: $width;
- height: $width;
+ height: $height;
  border-radius: $borderRD;
 }
 

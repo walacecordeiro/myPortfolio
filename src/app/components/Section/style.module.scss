@@ -1,9 +1,8 @@
 @use "../../styles/variables";
+@use "../../styles/mixins";
 
 .myProjects {
- display: flex;
- flex-direction: column;
- gap: 2rem;
+ @include mixins.flex-column-gap(2rem);
  width: 100%;
 
  h3 {
@@ -16,7 +15,7 @@
 @media (max-width: 700px) {
  .myProjects {
   h3 {
-    padding-left: 2rem !important;
+   padding-left: 2rem !important;
   }
  }
 }

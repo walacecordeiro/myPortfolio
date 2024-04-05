@@ -6,14 +6,12 @@
  margin: 2rem;
  z-index: 2;
  background: linear-gradient(rgba(255, 255, 255, 5%), rgba(255, 255, 255, 0%));
- width: fit-content;
- height: max-content;
-
+ 
+ @include mixins.wdth-hght-borderRD(fit-content, max-content);
  @include mixins.borderRD-boxSD-padding(8rem, variables.$box-shadow, 0.3rem);
+ @include mixins.flex-alignIC-justifyCC(flex);
 
  backdrop-filter: blur(1rem);
-
- @include mixins.flex-alignIC-justifyCC(flex);
 
  ul {
   @include mixins.flex-column-gap(0.5rem);
@@ -23,10 +21,8 @@
   .light {
    background-color: #718096;
    transition-duration: 0.2s;
-   width: 2rem;
-   height: 2rem;
    margin-top: 1rem;
-   border-radius: 9999rem;
+   @include mixins.wdth-hght-borderRD(2rem, 2rem, 9999rem);
    filter: blur(20px);
    position: absolute;
    z-index: -10;
@@ -68,8 +64,7 @@
      }
 
      svg {
-      width: auto;
-      height: 2rem;
+      @include mixins.wdth-hght-borderRD(auto, 2rem);
      }
     }
 
@@ -80,7 +75,7 @@
      color: variables.$clr-white;
 
      position: absolute;
-     width: max-content;
+     @include mixins.wdth-hght-borderRD(max-content);
      pointer-events: none;
      opacity: 0;
      transform: translateX(1rem);
@@ -100,8 +95,7 @@
   }
 
   .divider {
-   width: 65%;
-   height: 0.1rem;
+   @include mixins.wdth-hght-borderRD(65%, 0.1rem);
    background-color: variables.$icon-default;
   }
  }
@@ -124,17 +118,14 @@
 
    .dot {
     transition-duration: 0.2s;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 100%;
+    @include mixins.wdth-hght-borderRD(0.4rem, 0.4rem, 100%);
     background-color: variables.$icon-focus;
     position: absolute;
     top: 3.3rem;
    }
 
    .divider {
-    width: 0.2rem;
-    height: 3rem;
+    @include mixins.wdth-hght-borderRD(0.2rem, 3rem);
    }
   }
  }
@@ -145,7 +136,7 @@
   bottom: 0;
   margin: 0 !important;
 
-  border-top: 1px solid #2D2E31;
+  border-top: 1px solid #2d2e31;
   background: #15161aa8;
   backdrop-filter: blur(1rem);
  }

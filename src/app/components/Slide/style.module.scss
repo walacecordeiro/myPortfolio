@@ -1,4 +1,5 @@
 @use "../../styles/variables";
+@use "../../styles/mixins";
 
 .cardsWrapper {
  display: flex;
@@ -20,8 +21,7 @@
   margin: 0rem 0rem 2rem 1rem;
 
   .imgDiv {
-   width: 70rem;
-   height: 30rem;
+   @include mixins.wdth-hght-borderRD(70rem, 30rem);
    background-size: cover;
    background-position: center;
    border-radius: 4rem;
@@ -37,11 +37,10 @@
 @media (max-width: 700px) {
  .cardsWrapper {
   gap: 1rem;
-  
+
   .imgDiv {
-    width: 35rem !important;
-    height: 15rem !important;
-   }
+   @include mixins.wdth-hght-borderRD(35rem !important, 15rem !important);
+  }
 
   .description {
    padding: 1rem 2rem !important;
