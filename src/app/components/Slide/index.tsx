@@ -54,14 +54,17 @@ export default function Slide({ highlight }: SlideProps) {
    onMouseLeave={handleMouseLeave}
    onMouseUp={handleMouseUp}
    onMouseMove={handleMouseMove}
-   onClick={(e) => {
-    if (isMoved) e.preventDefault();
-   }}
   >
    {highlight &&
     highlightedProjects.map((project, i) => (
      <React.Fragment key={i}>
-      <Link href={project.link} className={styles["cards"]}>
+      <Link
+       onClick={(e) => {
+        if (isMoved) e.preventDefault();
+       }}
+       href={project.link}
+       className={styles["cards"]}
+      >
        <div
         className={styles["imgDiv"]}
         style={{ backgroundImage: `url(${project.imgSRC})` }}
@@ -77,7 +80,13 @@ export default function Slide({ highlight }: SlideProps) {
    {!highlight &&
     projects.map((project, i) => (
      <React.Fragment key={i}>
-      <Link href={project.link} className={styles["cards"]}>
+      <Link
+       onClick={(e) => {
+        if (isMoved) e.preventDefault();
+       }}
+       href={project.link}
+       className={styles["cards"]}
+      >
        <div
         className={styles["imgDiv"]}
         style={{ backgroundImage: `url(${project.imgSRC})` }}
