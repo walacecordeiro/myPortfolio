@@ -75,7 +75,7 @@
      color: variables.$clr-white;
 
      position: absolute;
-     @include mixins.wdth-hght-borderRD(max-content);
+     @include mixins.wdth-hght-borderRD(max-content, "", .4rem);
      pointer-events: none;
      opacity: 0;
      transform: translateX(1rem);

@@ -2,7 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import styles from "./style.module.scss";
-import { projects } from "./projectsData";
+import { projects } from "../../(content)/projetos/projectsData";
+import Link from "next/link";
 
 type SlideProps = {
  highlight?: boolean;
@@ -14,7 +15,6 @@ export default function Slide({ highlight }: SlideProps) {
  const [scrollLeft, setScrollLeft] = useState(0);
  const [isMoved, setIsMoved] = useState(false);
 
- const allProjects = projects;
  const highlightedProjects = projects.filter((project) => project.highlight);
 
  const slider = useRef<HTMLDivElement>(null);
@@ -61,7 +61,7 @@ export default function Slide({ highlight }: SlideProps) {
    {highlight &&
     highlightedProjects.map((project, i) => (
      <React.Fragment key={i}>
-      <a href={project.link} className={styles["cards"]}>
+      <Link href={project.link} className={styles["cards"]}>
        <div
         className={styles["imgDiv"]}
         style={{ backgroundImage: `url(${project.imgSRC})` }}
@@ -70,14 +70,14 @@ export default function Slide({ highlight }: SlideProps) {
         <h6>{project.title}</h6>
         <p>{project.description}</p>
        </div>
-      </a>
+      </Link>
      </React.Fragment>
     ))}
 
    {!highlight &&
     projects.map((project, i) => (
      <React.Fragment key={i}>
-      <a href={project.link} className={styles["cards"]}>
+      <Link href={project.link} className={styles["cards"]}>
        <div
         className={styles["imgDiv"]}
         style={{ backgroundImage: `url(${project.imgSRC})` }}
@@ -86,7 +86,7 @@ export default function Slide({ highlight }: SlideProps) {
         <h6>{project.title}</h6>
         <p>{project.description}</p>
        </div>
-      </a>
+      </Link>
      </React.Fragment>
     ))}
   </div>

@@ -1,19 +1,25 @@
 export const projects = [
  {
-  title: "primeiro projeto",
+  title: "Primeiro projeto",
   description: "descrição primeiro projeto",
   imgSRC: "/p1.jpg",
   alt: "imagem do primeiro projeto",
-  link: "#",
+  link: `/projetos/primeiro-projeto`,
   highlight: false,
+  details: {
+    fullDescription: "descrição completa do primeiro projeto"
+  }
  },
  {
-  title: "segundo projeto",
+  title: "Segundo projeto",
   description: "descrição segundo projeto",
   imgSRC: "/p2.jpg",
   alt: "imagem do segundo projeto",
-  link: "#",
+  link: "/projetos/segundo-projeto",
   highlight: true,
+  details: {
+    fullDescription: "descrição completa do segundo projeto"
+  }
  },
  {
   title: "terceiro projeto",
