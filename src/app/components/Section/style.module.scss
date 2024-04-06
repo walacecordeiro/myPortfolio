@@ -1,7 +1,7 @@
 @use "../../styles/variables";
 @use "../../styles/mixins";
 
-.myProjects {
+.section {
  @include mixins.flex-column-gap(2rem);
  width: 100%;
 
@@ -13,13 +13,9 @@
 
 /* Mobile */
 @media (max-width: 700px) {
- .myProjects {
+ .section {
   h3 {
    padding-left: 2rem !important;
   }
  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
 }

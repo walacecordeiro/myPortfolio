@@ -1,53 +1,11 @@
 @use "../../styles/variables";
 @use "../../styles/mixins";
 
-.cardsWrapper {
- display: flex;
- gap: 4rem;
+.slideWrapper {
  padding-right: 2rem;
  animation: slideInFromRight 0.7s ease;
 
  overflow-x: scroll;
 
  scrollbar-width: none;
-
- .cards {
-  border-radius: 4rem;
-  background-color: rgba(255, 255, 255, 10%);
-  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 4%), 0 2px 3px 0px rgba(0, 0, 0, 12%),
-   0 6px 9px 0px rgba(0, 0, 0, 60%);
-  backdrop-filter: blur(4rem);
-  padding: 0.8rem;
-  margin: 0rem 0rem 2rem 1rem;
-
-  .imgDiv {
-   @include mixins.wdth-hght-borderRD(70rem, 30rem);
-   background-size: cover;
-   background-position: center;
-   border-radius: 4rem;
-  }
-
-  .description {
-   padding: 2rem 4rem;
-  }
- }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
- .cardsWrapper {
-  gap: 1rem;
-
-  .imgDiv {
-   @include mixins.wdth-hght-borderRD(35rem !important, 15rem !important);
-  }
-
-  .description {
-   padding: 1rem 2rem !important;
-  }
- }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
 }

@@ -11,7 +11,7 @@ export default function Section({
  children,
 }: SectionProps) {
  return (
-  <section className={styles["myProjects"]}>
+  <section className={styles["section"]}>
    <h3>{title}</h3>
    {children}
   </section>

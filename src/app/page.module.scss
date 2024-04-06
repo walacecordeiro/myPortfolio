@@ -27,5 +27,8 @@
 @media (min-width: 701px) and (max-width: 1120px) {
  .myInfo {
   flex-direction: column;
+  .text {
+    padding-right: 5rem;
+  }
  }
 }

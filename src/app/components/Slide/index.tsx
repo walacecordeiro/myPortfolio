@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
-import { projects } from "../../(content)/projetos/projectsData";
 import Link from "next/link";
 
 type SlideProps = {
- highlight?: boolean;
+ children: React.ReactNode;
 };
 
-export default function Slide({ highlight }: SlideProps) {
+export default function Slide({ children }: SlideProps) {
  const [isDown, setIsDown] = useState(false);
  const [startX, setStartX] = useState(0);
  const [scrollLeft, setScrollLeft] = useState(0);
+ const [preventClick, setPreventClick] = useState(false);
  const [isMoved, setIsMoved] = useState(false);
-
- const highlightedProjects = projects.filter((project) => project.highlight);
 
  const slider = useRef<HTMLDivElement>(null);
 
@@ -34,7 +32,10 @@ export default function Slide({ highlight }: SlideProps) {
 
  const handleMouseUp = (e: React.MouseEvent) => {
   setIsDown(false);
-  if (isMoved) e.stopPropagation();
+  if (isMoved) {
+   e.stopPropagation();
+   setPreventClick(true);
+  }
  };
 
  const handleMouseMove = (e: React.MouseEvent) => {
@@ -45,59 +46,26 @@ export default function Slide({ highlight }: SlideProps) {
   const walk = (x - startX) * 1; // scroll-fast
   slider.current.scrollLeft = scrollLeft - walk;
  };
+ 
+ const handleClick = (e: React.MouseEvent) => {
+  if (preventClick) {
+   e.preventDefault();
+   e.stopPropagation();
+   setPreventClick(false);
+  }
+ };
 
  return (
   <div
-   className={styles["cardsWrapper"]}
+   className={styles["slideWrapper"]}
    ref={slider}
    onMouseDown={handleMouseDown}
    onMouseLeave={handleMouseLeave}
    onMouseUp={handleMouseUp}
    onMouseMove={handleMouseMove}
+   onClick={handleClick}
   >
-   {highlight &&
-    highlightedProjects.map((project, i) => (
-     <React.Fragment key={i}>
-      <Link
-       onClick={(e) => {
-        if (isMoved) e.preventDefault();
-       }}
-       href={project.link}
-       className={styles["cards"]}
-      >
-       <div
-        className={styles["imgDiv"]}
-        style={{ backgroundImage: `url(${project.imgSRC})` }}
-       ></div>
-       <div className={styles["description"]}>
-        <h6>{project.title}</h6>
-        <p>{project.description}</p>
-       </div>
-      </Link>
-     </React.Fragment>
-    ))}
-
-   {!highlight &&
-    projects.map((project, i) => (
-     <React.Fragment key={i}>
-      <Link
-       onClick={(e) => {
-        if (isMoved) e.preventDefault();
-       }}
-       href={project.link}
-       className={styles["cards"]}
-      >
-       <div
-        className={styles["imgDiv"]}
-        style={{ backgroundImage: `url(${project.imgSRC})` }}
-       ></div>
-       <div className={styles["description"]}>
-        <h6>{project.title}</h6>
-        <p>{project.description}</p>
-       </div>
-      </Link>
-     </React.Fragment>
-    ))}
+   {children}
   </div>
  );
 }
