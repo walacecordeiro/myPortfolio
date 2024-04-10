@@ -1,0 +1,97 @@
+@use "../../styles/variables";
+@use "../../styles/mixins";
+
+.main {
+ @include mixins.flex-column-gap(4rem);
+ width: fit-content;
+
+ .myInfo {
+  @include mixins.flex-alignIC-justifyCC(flex);
+  margin: 0 12rem;
+  flex-direction: row-reverse;
+  gap: 2rem;
+  animation: fadeIn 0.9s ease;
+  z-index: 1;
+
+  .text {
+   @include mixins.flex-column-gap(2rem);
+  }
+ }
+
+ .btnsWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: 80vw;
+  margin: 0 auto;
+  min-width: fit-content;
+  padding: 3rem 1rem;
+  transition: all 0.5s ease;
+  background: #15161a51;
+  z-index: 2;
+
+  @include mixins.borderRD-boxSD-padding(1rem, "", " ");
+
+  backdrop-filter: blur(4rem);
+
+  a {
+   background-color: #3b3e47;
+   @include mixins.borderRD-boxSD-padding("", variables.$box-shadow, " ");
+   padding: 1rem 2rem;
+   color: variables.$clr-white;
+
+   @include mixins.wdth-hght-borderRD(max-content, "", 9999rem);
+   transition-duration: 0.2s;
+  }
+ }
+}
+
+/* Mini */
+@media (max-width: 470px) {
+ .main {
+  min-width: 100%;
+  .myInfo {
+   margin: 0 1rem !important;
+  }
+  .cardsWrapper {
+   gap: 1rem !important;
+
+   .imgDiv {
+    @include mixins.wdth-hght-borderRD(30rem !important, 15rem !important);
+   }
+
+   .description {
+    padding: 1rem 2rem !important;
+   }
+  }
+ }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+ .main {
+  min-width: 100%;
+  width: 90%;
+  .myInfo {
+   flex-direction: column-reverse;
+   margin: 0 1rem !important;
+  }
+
+  .btnsWrapper {
+   height: 6rem;
+   padding: 1rem !important;
+
+   a {
+    height: max-content;
+    align-self: center;
+   }
+  }
+ }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+ .myInfo {
+  flex-direction: column !important;
+ }
+}

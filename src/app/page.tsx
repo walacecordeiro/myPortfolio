@@ -13,9 +13,9 @@ export default function Home() {
      <h1>Walace Cordeiro dos Santos</h1>
      <p>
       Olá, bem-vindo&#40;a&#41; ao meu espaço digital. Sou um{" "}
-      <strong>desenvolvedor front-end</strong>, criando interfaces de usuário eficazes e{" "}
+      <strong>desenvolvedor front-end</strong>, crio interfaces de usuário eficazes e{" "}
       <strong>aplicações web responsivas</strong>. Com um olhar atento para os detalhes e um
-      compromisso com a qualidade, eu crio soluções de front-end que são{" "}
+      compromisso com a qualidade, busco sempre soluções de front-end que são{" "}
       <strong>funcionais e agradáveis</strong> aos olhos.
      </p>
     </div>

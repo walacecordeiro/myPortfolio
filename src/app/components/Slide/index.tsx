@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
-import Link from "next/link";
 
 type SlideProps = {
  children: React.ReactNode;
@@ -46,7 +45,7 @@ export default function Slide({ children }: SlideProps) {
   const walk = (x - startX) * 1; // scroll-fast
   slider.current.scrollLeft = scrollLeft - walk;
  };
- 
+
  const handleClick = (e: React.MouseEvent) => {
   if (preventClick) {
    e.preventDefault();

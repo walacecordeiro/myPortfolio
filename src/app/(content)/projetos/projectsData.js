@@ -1,10 +1,10 @@
 export const projects = [
  {
-  title: "Primeiro projeto",
-  description: "descrição primeiro projeto",
-  imgSRC: "/p1.jpg",
+  title: "Temporizador de foco",
+  description: "Com áudio de fundo para concentração e aplicação das técnicas de estudo Pomodoro e Lozanov juntas",
+  imgSRC: "/p1.svg",
   alt: "imagem do primeiro projeto",
-  link: `/projetos/primeiro-projeto`,
+  link: `/projetos/temporizador-de-foco`,
   highlight: false,
   details: {
     fullDescription: "descrição completa do primeiro projeto"

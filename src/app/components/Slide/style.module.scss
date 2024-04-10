@@ -2,7 +2,6 @@
 @use "../../styles/mixins";
 
 .slideWrapper {
- padding-right: 2rem;
  animation: slideInFromRight 0.7s ease;
 
  overflow-x: scroll;

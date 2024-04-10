@@ -17,7 +17,7 @@ export const menu = [
     },
     {
      name: "Projetos",
-     link: "/projetos",
+     link: "/projetos/temporizador-de-foco",
      icon: <FaPencilRuler className="icons" />,
      dis: "distance2",
     },

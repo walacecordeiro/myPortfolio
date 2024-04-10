@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { projects } from "@/app/(content)/projetos/projectsData";
 import { permanentRedirect } from "next/navigation";
@@ -17,8 +16,10 @@ export default function projetos({ params }: paramsProjects) {
  if (project) {
   return (
    <React.Fragment>
-    <Link href="/">Voltar para o início</Link>
     <div>{params.slug}</div>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vero! In ipsum delectus aspernatur voluptates magni explicabo exercitationem ipsa reiciendis, ipsam voluptatem nihil incidunt, deserunt consequuntur sunt fugiat minus accusantium.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vero! In ipsum delectus aspernatur voluptates magni explicabo exercitationem ipsa reiciendis, ipsam voluptatem nihil incidunt, deserunt consequuntur sunt fugiat minus accusantium.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, vero! In ipsum delectus aspernatur voluptates magni explicabo exercitationem ipsa reiciendis, ipsam voluptatem nihil incidunt, deserunt consequuntur sunt fugiat minus accusantium.</h1>
    </React.Fragment>
   );
  } else {
