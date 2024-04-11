@@ -3,7 +3,8 @@
 
 .nav {
  position: fixed;
- margin: 2rem;
+ margin-top: 8rem;
+ margin-left: 2rem;
  z-index: 2;
  background: linear-gradient(rgba(255, 255, 255, 5%), rgba(255, 255, 255, 0%));
  
@@ -69,13 +70,14 @@
     }
 
     .menuName {
-     background-color: #3b3e47;
-     @include mixins.borderRD-boxSD-padding(0.4rem, variables.$box-shadow, 1rem);
+     background-color: variables.$icon-default;
+     @include mixins.borderRD-boxSD-padding(0.4rem, variables.$box-shadow, "");
+     padding: 1rem 2rem;
      font-size: 1.2rem;
      color: variables.$clr-white;
 
      position: absolute;
-     @include mixins.wdth-hght-borderRD(max-content, "", .4rem);
+     @include mixins.wdth-hght-borderRD(max-content, "", 4rem);
      pointer-events: none;
      opacity: 0;
      transform: translateX(1rem);

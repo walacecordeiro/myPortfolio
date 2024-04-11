@@ -11,17 +11,17 @@ export default function Menu() {
  const [active, setActive] = useState(0);
  const [isInitialized, setIsInitialized] = useState(false);
 
- useEffect(() => {
+  useEffect(() => {
    if (!isInitialized) {
-     const savedActive = localStorage.getItem("active");
-     if (savedActive !== null) {
-       setActive(Number(savedActive));
-     }
-     setIsInitialized(true);
+    const savedActive = localStorage.getItem("active");
+    if (savedActive !== null) {
+     setActive(Number(savedActive));
+    }
+    setIsInitialized(true);
    } else {
-     localStorage.setItem("active", active.toString());
+    localStorage.setItem("active", active.toString());
    }
- }, [active, isInitialized]);
+  }, [active, isInitialized]);
 
  return (
   <nav className={style["nav"]}>
@@ -40,7 +40,7 @@ export default function Menu() {
       `}
       >
        {i < 4 ? (
-        <Link href={menu.link} legacyBehavior>
+        <Link scroll href={menu.link} legacyBehavior>
          <a
           onClick={() => {
            if (i < 4) setActive(i);

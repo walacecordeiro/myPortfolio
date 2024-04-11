@@ -5,7 +5,7 @@ import styles from "./layout.module.scss";
 import StickyBox from "react-sticky-box";
 import Slide from "@/app/components/Slide";
 import { projects } from "./projectsData";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function RootLayout({
@@ -14,6 +14,20 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
  const [isMoved, setIsMoved] = useState(false);
+ const [active, setActive] = useState(0);
+ const [isInitialized, setIsInitialized] = useState(false);
+
+ useEffect(() => {
+  if (!isInitialized) {
+   const savedActive = localStorage.getItem("activeProject");
+   if (savedActive !== null) {
+    setActive(Number(savedActive));
+   }
+   setIsInitialized(true);
+  } else {
+   localStorage.setItem("activeProject", active.toExponential());
+  }
+ }, [active, isInitialized]);
 
  const handleMouseDown = () => {
   setIsMoved(false);
@@ -23,9 +37,11 @@ export default function RootLayout({
   setIsMoved(true);
  };
 
- const handleClick = (e: React.MouseEvent) => {
+ const handleClick = (e: React.MouseEvent, indice: number) => {
   if (isMoved) e.preventDefault();
+  setActive(indice);
  };
+
  return (
   <>
    <main className={styles["main"]}>
@@ -41,7 +57,7 @@ export default function RootLayout({
      <VideoFixed />
     </section>
 
-    <StickyBox offsetTop={-37}>
+    <StickyBox offsetTop={-40}>
      <Slide>
       <div
        className={styles["btnsWrapper"]}
@@ -50,7 +66,34 @@ export default function RootLayout({
       >
        {projects.map((project, i) => (
         <React.Fragment key={i}>
-         <Link scroll={false} onClick={handleClick} href={project.link}>
+         <Link
+          className={`${active === i ? `${styles["active"]}` : ""}`}
+          scroll={false}
+          onClick={(e) => {
+           handleClick(e, i);
+          }}
+          href={project.link}
+         >
+          Projeto {i + 1}
+         </Link>
+         <Link
+          className={`${active === i ? `${styles["active"]}` : ""}`}
+          scroll={false}
+          onClick={(e) => {
+           handleClick(e, i);
+          }}
+          href={project.link}
+         >
+          Projeto {i + 1}
+         </Link>
+         <Link
+          className={`${active === i ? `${styles["active"]}` : ""}`}
+          scroll={false}
+          onClick={(e) => {
+           handleClick(e, i);
+          }}
+          href={project.link}
+         >
           Projeto {i + 1}
          </Link>
         </React.Fragment>
