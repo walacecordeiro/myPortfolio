@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { menu } from "./menuData";
 
+import { usePathname } from "next/navigation";
+
 import style from "./style.module.scss";
 
 export default function Menu() {
@@ -11,17 +13,19 @@ export default function Menu() {
  const [active, setActive] = useState(0);
  const [isInitialized, setIsInitialized] = useState(false);
 
-  useEffect(() => {
-   if (!isInitialized) {
-    const savedActive = localStorage.getItem("active");
-    if (savedActive !== null) {
-     setActive(Number(savedActive));
-    }
-    setIsInitialized(true);
-   } else {
-    localStorage.setItem("active", active.toString());
+ const pathName = usePathname();
+
+ useEffect(() => {
+  if (!isInitialized) {
+   const savedActive = localStorage.getItem("active");
+   if (savedActive !== null) {
+    setActive(Number(savedActive));
    }
-  }, [active, isInitialized]);
+   setIsInitialized(true);
+  } else {
+   localStorage.setItem("active", active.toString());
+  }
+ }, [active, isInitialized]);
 
  return (
   <nav className={style["nav"]}>
@@ -49,17 +53,15 @@ export default function Menu() {
           onMouseLeave={() => setHover(-1)}
          >
           <span
-           className={`
-        ${style["icon"]}
-        ${active === i ? `${style["activeIcon"]}` : ""}
-        `}
+           className={`${style["icon"]} ${
+            pathName === `${menu.link}` ? `${style["activeIcon"]}` : ""
+           }`}
           >
            {menu.icon}
           </span>
           <span
            className={`
         ${style["menuName"]}
-        ${active === i ? `${style["activeName"]}` : ""}
         ${hover === i ? `${style["hoverName"]}` : ""}
         `}
           >
@@ -71,27 +73,14 @@ export default function Menu() {
         <a
          href={menu.link}
          target="_blank"
-         onClick={() => {
-          if (i < 4) setActive(i);
-         }}
+         //  onClick={() => {
+         //   if (i < 4) setActive(i);
+         //  }}
          onMouseEnter={() => setHover(i)}
          onMouseLeave={() => setHover(-1)}
         >
-         <span
-          className={`
-        ${style["icon"]}
-        ${active === i ? `${style["activeIcon"]}` : ""}
-        `}
-         >
-          {menu.icon}
-         </span>
-         <span
-          className={`
-        ${style["menuName"]}
-        ${active === i ? `${style["activeName"]}` : ""}
-        ${hover === i ? `${style["hoverName"]}` : ""}
-        `}
-         >
+         <span className={`${style["icon"]}`}>{menu.icon}</span>
+         <span className={`${style["menuName"]} ${hover === i ? `${style["hoverName"]}` : ""}`}>
           {menu.name}
          </span>
         </a>
