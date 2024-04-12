@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { menu } from "./menuData";
 
@@ -10,51 +10,44 @@ import style from "./style.module.scss";
 
 export default function Menu() {
  const [hover, setHover] = useState(-1);
- const [active, setActive] = useState(0);
- const [isInitialized, setIsInitialized] = useState(false);
 
  const pathName = usePathname();
+ const pathSegments = pathName.split("/");
+ const lastSegment = pathSegments[pathSegments.length - 1];
+ const activeIndex = menu.findIndex((obj) => pathName === obj.link);
+ const isPathInMenu = menu.some((obj) => obj.link === pathName);
 
- useEffect(() => {
-  if (!isInitialized) {
-   const savedActive = localStorage.getItem("active");
-   if (savedActive !== null) {
-    setActive(Number(savedActive));
-   }
-   setIsInitialized(true);
-  } else {
-   localStorage.setItem("active", active.toString());
-  }
- }, [active, isInitialized]);
+ const lightAndDot = `${isPathInMenu ? style[menu[activeIndex].dis] : ""} ${
+  pathName.includes(`/projetos/${lastSegment}`) ? style[menu[2].dis] : ""
+ }`;
 
  return (
   <nav className={style["nav"]}>
    <ul>
-    <span className={`${style["light"]} ${style[`${menu[active].dis}`]}`}></span>
-
-    <div className={`${style["dot"]} ${style[`${menu[active].dis}`]}`}></div>
+    <span className={`${style["light"]} ${lightAndDot}`}></span>
+    <div className={`${style["dot"]} ${lightAndDot}`}></div>
 
     {menu.map((menu, i) => (
      <React.Fragment key={i}>
       <li
        key={i}
        className={`
-      ${active === i ? `${style["activeLi"]}` : ""}
-      ${hover === i ? `${style["hoverLi"]}` : ""}
+      ${
+       pathName === menu.link || (i === 2 && pathName.startsWith("/projetos"))
+        ? style["activeLi"]
+        : ""
+      }
+      ${hover === i ? style["hoverLi"] : ""}
       `}
       >
        {i < 4 ? (
         <Link scroll href={menu.link} legacyBehavior>
-         <a
-          onClick={() => {
-           if (i < 4) setActive(i);
-          }}
-          onMouseEnter={() => setHover(i)}
-          onMouseLeave={() => setHover(-1)}
-         >
+         <a onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(-1)}>
           <span
            className={`${style["icon"]} ${
-            pathName === `${menu.link}` ? `${style["activeIcon"]}` : ""
+            pathName === menu.link || (i === 2 && pathName.startsWith("/projetos"))
+             ? style["activeIcon"]
+             : ""
            }`}
           >
            {menu.icon}
@@ -62,7 +55,7 @@ export default function Menu() {
           <span
            className={`
         ${style["menuName"]}
-        ${hover === i ? `${style["hoverName"]}` : ""}
+        ${hover === i ? style["hoverName"] : ""}
         `}
           >
            {menu.name}
@@ -73,14 +66,11 @@ export default function Menu() {
         <a
          href={menu.link}
          target="_blank"
-         //  onClick={() => {
-         //   if (i < 4) setActive(i);
-         //  }}
          onMouseEnter={() => setHover(i)}
          onMouseLeave={() => setHover(-1)}
         >
-         <span className={`${style["icon"]}`}>{menu.icon}</span>
-         <span className={`${style["menuName"]} ${hover === i ? `${style["hoverName"]}` : ""}`}>
+         <span className={style["icon"]}>{menu.icon}</span>
+         <span className={`${style["menuName"]} ${hover === i ? style["hoverName"] : ""}`}>
           {menu.name}
          </span>
         </a>

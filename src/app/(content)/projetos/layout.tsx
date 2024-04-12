@@ -5,8 +5,9 @@ import styles from "./layout.module.scss";
 import StickyBox from "react-sticky-box";
 import Slide from "@/app/components/Slide";
 import { projects } from "./projectsData";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
  children,
@@ -14,20 +15,7 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
  const [isMoved, setIsMoved] = useState(false);
- const [active, setActive] = useState(0);
- const [isInitialized, setIsInitialized] = useState(false);
-
- useEffect(() => {
-  if (!isInitialized) {
-   const savedActive = localStorage.getItem("activeProject");
-   if (savedActive !== null) {
-    setActive(Number(savedActive));
-   }
-   setIsInitialized(true);
-  } else {
-   localStorage.setItem("activeProject", active.toExponential());
-  }
- }, [active, isInitialized]);
+ const pathName = usePathname();
 
  const handleMouseDown = () => {
   setIsMoved(false);
@@ -37,9 +25,8 @@ export default function RootLayout({
   setIsMoved(true);
  };
 
- const handleClick = (e: React.MouseEvent, indice: number) => {
+ const handleClick = (e: React.MouseEvent) => {
   if (isMoved) e.preventDefault();
-  setActive(indice);
  };
 
  return (
@@ -67,30 +54,10 @@ export default function RootLayout({
        {projects.map((project, i) => (
         <React.Fragment key={i}>
          <Link
-          className={`${active === i ? `${styles["active"]}` : ""}`}
+          className={`${pathName === project.link ? `${styles["active"]}` : ""}`}
           scroll={false}
           onClick={(e) => {
-           handleClick(e, i);
-          }}
-          href={project.link}
-         >
-          Projeto {i + 1}
-         </Link>
-         <Link
-          className={`${active === i ? `${styles["active"]}` : ""}`}
-          scroll={false}
-          onClick={(e) => {
-           handleClick(e, i);
-          }}
-          href={project.link}
-         >
-          Projeto {i + 1}
-         </Link>
-         <Link
-          className={`${active === i ? `${styles["active"]}` : ""}`}
-          scroll={false}
-          onClick={(e) => {
-           handleClick(e, i);
+           handleClick(e);
           }}
           href={project.link}
          >
