@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 
 type SectionProps = {
  title?: string;
- children: [ReactElement, ReactNode];
+ children: ReactNode;
 };
 
 export default function Section({
