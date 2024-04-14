@@ -44,7 +44,7 @@ export default function RootLayout({
      <VideoFixed />
     </section>
 
-    <StickyBox offsetTop={-40}>
+    <StickyBox style={{ zIndex: 1 }} offsetTop={-41}>
      <Slide>
       <div
        className={styles["btnsWrapper"]}

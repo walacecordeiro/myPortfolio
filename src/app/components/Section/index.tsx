@@ -1,9 +1,9 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import styles from "./style.module.scss";
 
 type SectionProps = {
  title?: string;
- children: ReactElement;
+ children: [ReactElement, ReactNode];
 };
 
 export default function Section({
