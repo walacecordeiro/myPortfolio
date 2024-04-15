@@ -24,10 +24,10 @@ export default function projetos({ params }: paramsProjects) {
      <img src={project.imgSRC} alt={project.alt} />
     </div>
     <BoxInfo
-     img={project.imgSRC}
+     img={details?.boxInfo1.img}
      title={project.title}
      text={details?.boxInfo1?.fullDescription}
-     textBtn="Ver projeto funcionando"
+     textBtn="Faça um teste agora"
      linkBtn={details?.boxInfo1.btnLink}
      direction="row"
     />

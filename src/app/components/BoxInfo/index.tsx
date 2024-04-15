@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 type propsBoxInfo = {
  img?: string;
@@ -21,7 +22,7 @@ export function BoxInfo({ img, alt, title, text, textBtn, linkBtn, direction }: 
      <p>{text}</p>
      {textBtn && (
       <a target="_blanck" href={linkBtn}>
-       {textBtn}
+       {textBtn} <FaArrowUpRightFromSquare size={14} />
       </a>
      )}
     </div>
