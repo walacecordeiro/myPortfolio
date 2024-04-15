@@ -1,4 +1,4 @@
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 
 export default function VideoFixed() {
  return (
@@ -8,11 +8,14 @@ export default function VideoFixed() {
     disablePictureInPicture
     controlsList="nodownload"
     autoPlay={true}
-    src="/videoTemp.mp4"
+    muted
+    src="/videoTemp2.mp4"
     title="vídeo sobre algo"
     className="video"
    ></video>
-   <p>Lorem ipsum dolor sit amet.</p>
+   <p>
+    <em>"O futuro é moldado pelo avanço constante"</em>
+   </p>
   </div>
  );
 }
