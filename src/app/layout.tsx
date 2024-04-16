@@ -4,7 +4,7 @@ import "./layout.scss";
 import Menu from "./components/Menu";
 
 export const metadata: Metadata = {
- title: "Meu portfólio",
+ title: "Walace Cordeiro dos Santos",
 };
 
 export default function RootLayout({

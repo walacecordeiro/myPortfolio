@@ -1,16 +1,21 @@
 export const projects = [
  {
   title: "Temporizador de foco",
-  description: "Pensado para estudantes universitários e afins",
+  description: "Pensado para estudantes",
   imgSRC: "/p1.webp",
   alt: "imagem do primeiro projeto",
   link: `/projetos/temporizador-de-foco`,
   highlight: false,
+  responsive: true,
   details: {
    boxInfo1: {
     img: "/p1ProjectGIF.gif",
     fullDescription: `Este projeto é uma inovadora ferramenta de estudo que combina o poder do áudio de fundo para concentração com a aplicação conjunta das técnicas de estudo Pomodoro e Lozanov. Além disso, ele apresenta versões em temas claro e escuro, permitindo aos usuários escolherem a interface que melhor se adapta às suas preferências visuais. O projeto visa criar um ambiente propício para a concentração e o foco.`,
     btnLink: "https://walacecordeiro.github.io/myPomodoroFocusTimer/",
+   },
+   responsive: {
+    imgMobile: "/p1-mobile.webp",
+    imgDesk: "/p1-desk.webp",
    },
   },
  },
@@ -21,6 +26,7 @@ export const projects = [
   alt: "imagem do segundo projeto",
   link: "/projetos/segundo-projeto",
   highlight: true,
+  responsive: false,
   details: {
    boxInfo1: {
     img: "/p2.webp",

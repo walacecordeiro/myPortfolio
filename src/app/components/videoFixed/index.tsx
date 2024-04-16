@@ -14,7 +14,7 @@ export default function VideoFixed() {
     className="video"
    ></video>
    <p>
-    <em>&quot;O futuro é moldado pelo avanço constante&quot;</em>
+    <em>&quot;Nosso futuro é moldado pelo avanço constante&quot;</em>
    </p>
   </div>
  );

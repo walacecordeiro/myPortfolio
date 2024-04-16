@@ -8,7 +8,6 @@
  .myInfo {
   @include mixins.flex-alignIC-justifyCC(flex);
   margin: 0 12rem;
-  flex-direction: row-reverse;
   gap: 2rem;
   animation: fadeIn 0.9s ease;
   z-index: 1;
