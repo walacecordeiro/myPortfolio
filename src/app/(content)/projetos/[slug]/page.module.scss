@@ -4,7 +4,7 @@
 .main {
  display: flex;
  flex-direction: column;
- gap: 10rem;
+ gap: 12rem;
  width: 80%;
  margin: 0 auto;
  animation: fadeIn 0.6s forwards;
@@ -16,10 +16,10 @@
   justify-content: center;
   gap: 2rem;
   align-items: center;
-  text-align: center;
 
   p {
-   width: 90%;
+   width: 95%;
+   text-align: center;
   }
 
   &::before {
@@ -27,7 +27,7 @@
    content: "";
    top: -4rem;
    right: -4rem;
-   bottom: -6rem;
+   bottom: -4rem;
    left: -4rem;
    z-index: -1;
    background-color: variables.$icon-default;
@@ -37,27 +37,19 @@
 
   .mokupWrapping {
    position: relative;
-   @include mixins.wdth-hght-borderRD(90%, fit-content, 3rem);
-   @include mixins.borderRD-boxSD-padding("", variables.$box-shadow, 0.5rem);
-   background-color: rgba(255, 255, 255, 10%);
+   @include mixins.wdth-hght-borderRD(50%, fit-content, 3rem);
 
    img {
     align-self: center;
     @include mixins.wdth-hght-borderRD(100%, fit-content, 3rem);
+    filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, 0.6));
    }
 
-   .mobileVersion {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    background-color: rgba(255, 255, 255, 0.118);
-
-    @include mixins.wdth-hght-borderRD(fit-content, fit-content, 1rem);
-    @include mixins.borderRD-boxSD-padding("", variables.$box-shadow, 0.5rem 0);
-
-    img {
-     @include mixins.wdth-hght-borderRD(100%, 30rem, 1rem);
-    }
+   :nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
    }
   }
  }
@@ -68,14 +60,15 @@
   width: 95%;
 
   .responsiveSection {
+   text-align: center;
+
    &::before {
     right: 0;
     left: 0;
    }
-   .mobileVersion {
-    img {
-     @include mixins.wdth-hght-borderRD(100%, 19rem !important, 1rem);
-    }
+
+   .mokupWrapping {
+    @include mixins.wdth-hght-borderRD(70%, fit-content, 3rem);
    }
   }
  }

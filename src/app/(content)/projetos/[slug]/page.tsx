@@ -3,11 +3,7 @@ import { projects } from "@/app/(content)/projetos/projectsData";
 import { permanentRedirect } from "next/navigation";
 import style from "./page.module.scss";
 import { BoxInfo } from "@/app/components/BoxInfo";
-import { IoDesktopOutline } from "react-icons/io5";
-import { FaMobileAlt } from "react-icons/fa";
 import { DiResponsive } from "react-icons/di";
-
-
 
 type paramsProjects = {
  params: {
@@ -43,18 +39,19 @@ export default function projetos({ params }: paramsProjects) {
       </p>
 
       <div className={style["mokupWrapping"]}>
-       <img src={details?.responsive?.imgDesk} alt={project.alt} />
-       <div style={{ display: "flex", alignItems: "center", gap: 5, padding: 10 }}>
-        <DiResponsive color="white" size={50} />
-        <p>Diversos dispositivos</p>
-       </div>
-
-       <div className={style["mobileVersion"]}>
-        <img src={details?.responsive?.imgMobile} alt="Imagens em sua versão desktop e mobile" />
-       </div>
+       <img src={details?.responsive?.img} alt={project.alt} />
       </div>
      </div>
     )}
+
+    <BoxInfo
+     img={details?.boxInfo2?.img}
+     title="Se você é Desenvolvedor(a) ou Recrutador(a)"
+     text="Este projeto está hospedado no GitHub, onde desenvolvedores podem explorar o código, entender a estrutura do projeto e usar o código como referência para seus próprios projetos. Para recrutadores, este projeto demonstra minha capacidade de escrever código limpo, eficiente e bem documentado. Convido todos a explorarem este projeto no repositório do projeto."
+     textBtn="Acesse o Repositório no GitHub"
+     linkBtn={details?.boxInfo2?.btnLink}
+     direction="row-reverse"
+    />
    </main>
   );
  } else {

@@ -13,9 +13,12 @@ export const projects = [
     fullDescription: `Este projeto é uma inovadora ferramenta de estudo que combina o poder do áudio de fundo para concentração com a aplicação conjunta das técnicas de estudo Pomodoro e Lozanov. Além disso, ele apresenta versões em temas claro e escuro, permitindo aos usuários escolherem a interface que melhor se adapta às suas preferências visuais. O projeto visa criar um ambiente propício para a concentração e o foco.`,
     btnLink: "https://walacecordeiro.github.io/myPomodoroFocusTimer/",
    },
+   boxInfo2: {
+    img: "/p1ProjectGithub.gif",
+    btnLink: "https://github.com/walacecordeiro/myPomodoroFocusTimer",
+   },
    responsive: {
-    imgMobile: "/p1-mobile.webp",
-    imgDesk: "/p1-desk.webp",
+    img: "/p1Responsive.png",
    },
   },
  },
