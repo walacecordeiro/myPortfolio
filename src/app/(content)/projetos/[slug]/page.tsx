@@ -3,7 +3,7 @@ import { projects } from "@/app/(content)/projetos/projectsData";
 import { permanentRedirect } from "next/navigation";
 import style from "./page.module.scss";
 import { BoxInfo } from "@/app/components/BoxInfo";
-import { DiResponsive } from "react-icons/di";
+import Footer from "@/app/components/Footer";
 
 type paramsProjects = {
  params: {
@@ -13,7 +13,12 @@ type paramsProjects = {
 
 export default function projetos({ params }: paramsProjects) {
  const project = projects.find(
-  (project) => project.title.toLowerCase().replace(/\s/g, "-") === params.slug
+  (project) =>
+   project.title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s/g, "-") === params.slug
  );
 
  const details = project?.details;
@@ -52,6 +57,13 @@ export default function projetos({ params }: paramsProjects) {
      linkBtn={details?.boxInfo2?.btnLink}
      direction="row-reverse"
     />
+
+    <div className={style["footer"]}>
+     <h6>Habilidades desenvolvidas durante o projeto</h6>
+     <p>{details?.resume?.p1}</p>
+     {details?.resume?.p2 && <p>{details?.resume?.p2}</p>}
+    </div>
+    <Footer />
    </main>
   );
  } else {

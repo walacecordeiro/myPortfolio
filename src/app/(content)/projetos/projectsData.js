@@ -20,54 +20,37 @@ export const projects = [
    responsive: {
     img: "/p1Responsive.png",
    },
-  },
- },
- {
-  title: "Segundo projeto",
-  description: "descrição curta do segundo projeto",
-  imgSRC: "/p2.webp",
-  alt: "imagem do segundo projeto",
-  link: "/projetos/segundo-projeto",
-  highlight: true,
-  responsive: false,
-  details: {
-   boxInfo1: {
-    img: "/p2.webp",
-    fullDescription: "descrição completa do segundo projeto",
-    btnLink: "#",
+   resume: {
+    p1: "Durante o desenvolvimento deste projeto, aprimorei uma variedade de habilidades técnicas e não técnicas. No lado técnico, aprofundei meu conhecimento em linguagens de programação em JavaScript, e também em usar CSS juntamente com a lógica da linguagem em questão.",
+    p2: "No lado não técnico, aprimorei minhas habilidades de resolução de conflitos e também desenvolvi uma mentalidade de crescimento, aprendendo a abraçar desafios, persistir diante de obstáculos que foram surgindo e notar que o esforço é o caminho para a maestria.",
    },
   },
  },
  {
-  title: "terceiro projeto",
-  description: "descrição terceiro projeto",
-  imgSRC: "/p3.webp",
-  alt: "imagem do terceiro projeto",
-  link: "#",
-  highlight: true,
-  details: {
-   boxInfo1: {
-    img: "/p3.webp",
-    fullDescription: "descrição completa do primeiro projeto",
-    btnLink: "#",
+    title: "Cartão de visitas digital",
+    description: "Pensado para usar nas redes sociais",
+    imgSRC: "/p2.webp",
+    alt: "imagem do primeiro projeto",
+    link: `/projetos/cartao-de-visitas-digital`,
+    highlight: true,
+    responsive: true,
+    details: {
+     boxInfo1: {
+      img: "/p2ProjectGIF.gif",
+      fullDescription: `O meu cartão de visitas digital traz uma inovadora interface que redefine a maneira como podemos nos apresentar profissionalmente. Além disso, o projeto oferece versões em temas claro e escuro, permitindo aos usuários escolherem a interface que melhor se adapta às suas preferências visuais. O objetivo do meu cartão de visitas digital é facilitar conexões profissionais e criar uma impressão duradoura.`,
+      btnLink: "https://my-links-git-main-walacecordeiro.vercel.app/",
+     },
+     boxInfo2: {
+      img: "/p2ProjectGithub.gif",
+      btnLink: "https://github.com/walacecordeiro/myLinks",
+     },
+     responsive: {
+      img: "/p2Responsive.png",
+     },
+     resume: {
+      p1: "Durante o desenvolvimento do projeto Cartão de visitas digital, diversas habilidades foram aprimoradas e novas competências foram adquiridas. A estilização do cartão exigiu um profundo conhecimento de CSS, onde foi necessário entender como aplicar estilos de forma eficaz para criar uma interface atraente e responsiva. As variáveis CSS foram uma ferramenta essencial para manter a consistência do design e facilitar as alterações de estilo. Elas permitiram a definição de valores que podem ser reutilizados em toda a folha de estilo.",
+      p2: "O JavaScript puro foi usado para adicionar interatividade ao botão com a funções para alternar entre os temas claro e escuro. Além disso, foi crucial garantir que o cartão funcionasse bem em todos os dispositivos, o que envolveu o uso de técnicas de design responsivo com CSS puro.",
+     },
+    },
    },
-  },
- },
- {
-  title: "quarto projeto",
-  description: "descrição quarto projeto",
-  imgSRC: "/p4.webp",
-  alt: "imagem do quarto projeto",
-  link: "#",
-  highlight: false,
-  details: {
-   boxInfo1: {
-    img: "/p4.webp",
-    text:
-     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis aspernatur eius ipsa adipisci nulla maxime consequatur explicabo a. Suscipit aliquid commodi provident iusto perspiciatis magnam porro ipsum explicabo in eum?",
-    btnLink: "#",
-   },
-   fullDescription: "descrição completa do primeiro projeto",
-  },
- },
 ];

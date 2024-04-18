@@ -29,9 +29,13 @@
  h6 {
   color: variables.$clr-white-8;
   font-size: 1.8rem;
+  
+  strong {
+   color: variables.$clr-white;
+  }
  }
 
- p {
+ p, pre {
   font-size: 1.6rem;
   color: variables.$clr-white-6;
 

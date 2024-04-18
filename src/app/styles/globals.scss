@@ -20,8 +20,12 @@ body {
  background-color: variables.$bg-root;
 }
 
+pre {
+ font-family: variables.$ff;
+}
+
 p {
-    line-height: 2.2rem;
+ line-height: 2.2rem;
 }
 
 a {

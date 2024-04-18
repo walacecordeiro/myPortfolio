@@ -4,6 +4,7 @@ import Slide from "./components/Slide";
 import Section from "./components/Section";
 import VideoFixed from "./components/videoFixed";
 import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 
 export default function Home() {
  return (
@@ -32,6 +33,7 @@ export default function Home() {
      <Cards wrap="nowrap"/>
     </Slide>
    </Section>
+   <Footer />
   </main>
  );
 }
