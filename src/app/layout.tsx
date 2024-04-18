@@ -16,12 +16,12 @@ export default function RootLayout({
 }>) {
  return (
   <html lang="pt-br" suppressHydrationWarning={true}>
-   <body className="layout" suppressHydrationWarning={true}>
-    <Menu />
-    <Suspense fallback={<Loading />}>
+   <Suspense fallback={<Loading />}>
+    <body className="layout" suppressHydrationWarning={true}>
+     <Menu />
      <div className="page">{children}</div>
-    </Suspense>
-   </body>
+    </body>
+   </Suspense>
   </html>
  );
 }
