@@ -5,9 +5,10 @@ import styles from "./layout.module.scss";
 import StickyBox from "react-sticky-box";
 import Slide from "@/app/components/Slide";
 import { projects } from "./projectsData";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Loading from "@/app/loading";
 
 export default function RootLayout({
  children,
@@ -31,46 +32,48 @@ export default function RootLayout({
 
  return (
   <>
-   <main className={styles["main"]}>
-    <section className={styles["myInfo"]}>
-     <div className={styles["text"]}>
-      <h1>Detalhes dos Projetos</h1>
-      <p>
-       Em cada projeto, você encontrará uma combinação de várias tecnologias, principalemente HTML,
-       CSS, JavaScript, React.js e Next.js. Cada projeto é um testemunho do meu compromisso com a
-       aprendizagem contínua e da minha paixão pela inovação. Obrigado por visitar!
-      </p>
-     </div>
-     <VideoFixed />
-    </section>
-
-    <StickyBox style={{ zIndex: 1 }} offsetTop={-41}>
-     <Slide>
-      <div
-       className={styles["btnsWrapper"]}
-       onMouseDown={handleMouseDown}
-       onMouseMove={handleMouseMove}
-      >
-       {projects.map((project, i) => (
-        <React.Fragment key={i}>
-         <Link
-          className={`${pathName === project.link ? `${styles["active"]}` : ""}`}
-          scroll={false}
-          onClick={(e) => {
-           handleClick(e);
-          }}
-          href={project.link}
-         >
-          Projeto {i + 1}
-         </Link>
-        </React.Fragment>
-       ))}
+   <Suspense fallback={<Loading />}>
+    <main className={styles["main"]}>
+     <section className={styles["myInfo"]}>
+      <div className={styles["text"]}>
+       <h1>Detalhes dos Projetos</h1>
+       <p>
+        Em cada projeto, você encontrará uma combinação de várias tecnologias, principalemente HTML,
+        CSS, JavaScript, React.js e Next.js. Cada projeto é um testemunho do meu compromisso com a
+        aprendizagem contínua e da minha paixão pela inovação. Obrigado por visitar!
+       </p>
       </div>
-     </Slide>
-    </StickyBox>
+      <VideoFixed />
+     </section>
 
-    <div>{children}</div>
-   </main>
+     <StickyBox style={{ zIndex: 1 }} offsetTop={-41}>
+      <Slide>
+       <div
+        className={styles["btnsWrapper"]}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+       >
+        {projects.map((project, i) => (
+         <React.Fragment key={i}>
+          <Link
+           className={`${pathName === project.link ? `${styles["active"]}` : ""}`}
+           scroll={false}
+           onClick={(e) => {
+            handleClick(e);
+           }}
+           href={project.link}
+          >
+           Projeto {i + 1}
+          </Link>
+         </React.Fragment>
+        ))}
+       </div>
+      </Slide>
+     </StickyBox>
+
+     <div>{children}</div>
+    </main>
+   </Suspense>
   </>
  );
 }
