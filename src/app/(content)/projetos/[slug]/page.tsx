@@ -13,18 +13,7 @@ type paramsProjects = {
 };
 
 export default function projetos({ params }: paramsProjects) {
- const projectMap = new Map();
-
- projects.forEach((project) => {
-  const formattedTitle = project.title
-   .normalize("NFD")
-   .replace(/[\u0300-\u036f]/g, "")
-   .toLowerCase()
-   .replace(/\s/g, "-");
-  projectMap.set(formattedTitle, project);
- });
-
- const project = projectMap.get(params.slug);
+ const project = projects.find((project) => project.slug === params.slug);
 
  const details = project?.details;
 

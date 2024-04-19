@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/app/(content)/projetos/projectsData";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ type CardProps = {
 
 export default function Cards({ highlight, wrap }: CardProps) {
  const highlightedProjects = projects.filter((project) => project.highlight);
- 
+
  const [isMoved, setIsMoved] = useState(false);
 
  const handleMouseDown = () => {
@@ -36,38 +36,41 @@ export default function Cards({ highlight, wrap }: CardProps) {
   >
    {highlight &&
     highlightedProjects.map((project, i) => (
-     <React.Fragment key={i}>
-      <Link href={project.link} className={styles["cards"]}>
-       <div
-        className={styles["imgDiv"]}
-        style={{ backgroundImage: `url(${project.imgSRC})` }}
-        onClick={handleClick}
-       ></div>
-       <div className={styles["description"]}>
-        <h6>{project.title}</h6>
-        <p>{project.description}</p>
-       </div>
-      </Link>
-     </React.Fragment>
+     <Suspense key={i} fallback={<p>Carregando cards...</p>}>
+      <React.Fragment>
+       <Link href={project.link} className={styles["cards"]}>
+        <div
+         className={styles["imgDiv"]}
+         style={{ backgroundImage: `url(${project.imgSRC})` }}
+         onClick={handleClick}
+        ></div>
+        <div className={styles["description"]}>
+         <h6>{project.title}</h6>
+         <p>{project.description}</p>
+        </div>
+       </Link>
+      </React.Fragment>
+     </Suspense>
     ))}
 
    {!highlight &&
     projects.map((project, i) => (
-     <React.Fragment key={i}>
-      <Link href={project.link} className={styles["cards"]}>
-       <div
-        className={styles["imgDiv"]}
-        style={{ backgroundImage: `url(${project.imgSRC})` }}
-        onClick={handleClick}
-       ></div>
-       <div className={styles["description"]}>
-        <h6>{project.title}</h6>
-        <p>{project.description}</p>
-       </div>
-      </Link>
-     </React.Fragment>
+     <Suspense key={i} fallback={<p>Carregando cards...</p>}>
+      <React.Fragment>
+       <Link href={project.link} className={styles["cards"]}>
+        <div
+         className={styles["imgDiv"]}
+         style={{ backgroundImage: `url(${project.imgSRC})` }}
+         onClick={handleClick}
+        ></div>
+        <div className={styles["description"]}>
+         <h6>{project.title}</h6>
+         <p>{project.description}</p>
+        </div>
+       </Link>
+      </React.Fragment>
+     </Suspense>
     ))}
   </div>
  );
 }
-

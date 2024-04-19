@@ -1,6 +1,7 @@
 export const projects = [
  {
   title: "Temporizador de foco",
+  slug: "temporizador-de-foco",
   description: "Pensado para estudantes",
   imgSRC: "/p1.webp",
   alt: "imagem do primeiro projeto",
@@ -28,6 +29,7 @@ export const projects = [
  },
  {
     title: "Cartão de visitas digital",
+    slug: "cartao-de-visitas-digital",
     description: "Pensado para usar nas redes sociais",
     imgSRC: "/p2.webp",
     alt: "imagem do primeiro projeto",
