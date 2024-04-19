@@ -5,7 +5,7 @@ import styles from "./layout.module.scss";
 import StickyBox from "react-sticky-box";
 import Slide from "@/app/components/Slide";
 import { projects } from "./projectsData";
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -41,9 +41,7 @@ export default function RootLayout({
        aprendizagem contínua e da minha paixão pela inovação. Obrigado por visitar!
       </p>
      </div>
-     <Suspense fallback={<p>Carregando vídeo...</p>}>
-      <VideoFixed />
-     </Suspense>
+     <VideoFixed />
     </section>
 
     <StickyBox style={{ zIndex: 1 }} offsetTop={-41}>

@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/app/(content)/projetos/projectsData";
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
 
@@ -36,39 +36,35 @@ export default function Cards({ highlight, wrap }: CardProps) {
   >
    {highlight &&
     highlightedProjects.map((project, i) => (
-     <Suspense key={i} fallback={<p>Carregando cards...</p>}>
-      <React.Fragment>
-       <Link href={project.link} className={styles["cards"]}>
-        <div
-         className={styles["imgDiv"]}
-         style={{ backgroundImage: `url(${project.imgSRC})` }}
-         onClick={handleClick}
-        ></div>
-        <div className={styles["description"]}>
-         <h6>{project.title}</h6>
-         <p>{project.description}</p>
-        </div>
-       </Link>
-      </React.Fragment>
-     </Suspense>
+     <React.Fragment>
+      <Link href={project.link} className={styles["cards"]}>
+       <div
+        className={styles["imgDiv"]}
+        style={{ backgroundImage: `url(${project.imgSRC})` }}
+        onClick={handleClick}
+       ></div>
+       <div className={styles["description"]}>
+        <h6>{project.title}</h6>
+        <p>{project.description}</p>
+       </div>
+      </Link>
+     </React.Fragment>
     ))}
 
    {!highlight &&
     projects.map((project, i) => (
      <React.Fragment key={i}>
-      <Suspense fallback={<p>Carregando cards...</p>}>
-       <Link href={project.link} className={styles["cards"]}>
-        <div
-         className={styles["imgDiv"]}
-         style={{ backgroundImage: `url(${project.imgSRC})` }}
-         onClick={handleClick}
-        ></div>
-        <div className={styles["description"]}>
-         <h6>{project.title}</h6>
-         <p>{project.description}</p>
-        </div>
-       </Link>
-      </Suspense>
+      <Link href={project.link} className={styles["cards"]}>
+       <div
+        className={styles["imgDiv"]}
+        style={{ backgroundImage: `url(${project.imgSRC})` }}
+        onClick={handleClick}
+       ></div>
+       <div className={styles["description"]}>
+        <h6>{project.title}</h6>
+        <p>{project.description}</p>
+       </div>
+      </Link>
      </React.Fragment>
     ))}
   </div>
