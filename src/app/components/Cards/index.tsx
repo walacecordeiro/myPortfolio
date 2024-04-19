@@ -36,7 +36,7 @@ export default function Cards({ highlight, wrap }: CardProps) {
   >
    {highlight &&
     highlightedProjects.map((project, i) => (
-     <React.Fragment>
+     <React.Fragment key={i}>
       <Link href={project.link} className={styles["cards"]}>
        <div
         className={styles["imgDiv"]}
