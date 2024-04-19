@@ -7,6 +7,7 @@ import Loading from "./loading";
 
 export const metadata: Metadata = {
  title: "Walace Cordeiro dos Santos",
+ description: "Este é meu portfólio de desenvolvedor web"
 };
 
 export default function RootLayout({

@@ -43,7 +43,7 @@ export default function RootLayout({
         aprendizagem contínua e da minha paixão pela inovação. Obrigado por visitar!
        </p>
       </div>
-      <VideoFixed />
+      {/* <VideoFixed /> */}
      </section>
 
      <StickyBox style={{ zIndex: 1 }} offsetTop={-41}>

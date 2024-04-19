@@ -16,7 +16,7 @@ export function BoxInfo({ img, alt, title, text, textBtn, linkBtn, direction }: 
  return (
   <React.Fragment>
    <div className={style["boxInfoWrapping"]} style={direction && { flexDirection: `${direction}` }}>
-    <img src="https://source.unsplash.com/random/700x300/?cat" alt={alt} />
+    <img src={img} alt={alt} />
     <div className={style["infoWrapping"]}>
      <h5>{title}</h5>
      <p>{text}</p>
