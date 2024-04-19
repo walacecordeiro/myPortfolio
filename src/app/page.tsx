@@ -23,7 +23,9 @@ export default function Home() {
        <strong>funcionais e agradáveis</strong> aos olhos.
       </p>
      </div>
-     <VideoFixed />
+     <Suspense fallback={<p>Carregando vídeo...</p>}>
+      <VideoFixed />
+     </Suspense>
     </section>
 
     {/* <Section title="Projetos em destaque">
@@ -32,9 +34,11 @@ export default function Home() {
      </Slide>
     </Section> */}
     <Section title="Todos meus projetos">
-     <Slide>
-      <Cards wrap="nowrap" />
-     </Slide>
+     <Suspense fallback={<Loading />}>
+      <Slide>
+       <Cards wrap="nowrap" />
+      </Slide>
+     </Suspense>
     </Section>
     <Footer />
    </main>

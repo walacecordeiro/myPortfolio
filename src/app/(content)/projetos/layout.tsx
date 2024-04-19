@@ -8,7 +8,6 @@ import { projects } from "./projectsData";
 import React, { Suspense, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Loading from "@/app/loading";
 
 export default function RootLayout({
  children,
@@ -42,7 +41,9 @@ export default function RootLayout({
        aprendizagem contínua e da minha paixão pela inovação. Obrigado por visitar!
       </p>
      </div>
-     {/* <VideoFixed /> */}
+     <Suspense fallback={<p>Carregando vídeo...</p>}>
+      <VideoFixed />
+     </Suspense>
     </section>
 
     <StickyBox style={{ zIndex: 1 }} offsetTop={-41}>
@@ -70,9 +71,7 @@ export default function RootLayout({
      </Slide>
     </StickyBox>
 
-    <Suspense fallback={<Loading />}>
-     <div>{children}</div>
-    </Suspense>
+    <div>{children}</div>
    </main>
   </>
  );
