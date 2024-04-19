@@ -7,7 +7,7 @@ import Loading from "./loading";
 
 export const metadata: Metadata = {
  title: "Walace Cordeiro dos Santos",
- description: "Este é meu portfólio de desenvolvedor web"
+ description: "Este é meu portfólio de desenvolvedor web",
 };
 
 export default function RootLayout({
@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
  return (
   <html lang="pt-br" suppressHydrationWarning={true}>
-   <Suspense fallback={<Loading />}>
-    <body className="layout" suppressHydrationWarning={true}>
-     <Menu />
+   <body className="layout" suppressHydrationWarning={true}>
+    <Menu />
+    <Suspense fallback={<Loading />}>
      <div className="page">{children}</div>
-    </body>
-   </Suspense>
+    </Suspense>
+   </body>
   </html>
  );
 }

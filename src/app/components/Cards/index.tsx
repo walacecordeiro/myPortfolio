@@ -55,8 +55,8 @@ export default function Cards({ highlight, wrap }: CardProps) {
 
    {!highlight &&
     projects.map((project, i) => (
-     <Suspense key={i} fallback={<p>Carregando cards...</p>}>
-      <React.Fragment>
+     <React.Fragment key={i}>
+      <Suspense fallback={<p>Carregando cards...</p>}>
        <Link href={project.link} className={styles["cards"]}>
         <div
          className={styles["imgDiv"]}
@@ -68,8 +68,8 @@ export default function Cards({ highlight, wrap }: CardProps) {
          <p>{project.description}</p>
         </div>
        </Link>
-      </React.Fragment>
-     </Suspense>
+      </Suspense>
+     </React.Fragment>
     ))}
   </div>
  );

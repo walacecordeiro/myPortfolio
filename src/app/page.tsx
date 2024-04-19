@@ -23,7 +23,7 @@ export default function Home() {
        <strong>funcionais e agradáveis</strong> aos olhos.
       </p>
      </div>
-     {/* <VideoFixed /> */}
+     <VideoFixed />
     </section>
 
     {/* <Section title="Projetos em destaque">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import style from "./style.module.scss";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
@@ -16,7 +16,9 @@ export function BoxInfo({ img, alt, title, text, textBtn, linkBtn, direction }: 
  return (
   <React.Fragment>
    <div className={style["boxInfoWrapping"]} style={direction && { flexDirection: `${direction}` }}>
-    <img src={img} alt={alt} />
+    <Suspense fallback={<p>Carregando imagem...</p>}>
+     <img src={img} alt={alt} />
+    </Suspense>
     <div className={style["infoWrapping"]}>
      <h5>{title}</h5>
      <p>{text}</p>
