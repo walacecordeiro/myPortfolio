@@ -6,31 +6,31 @@ export const menu = [
     {
      name: "Início",
      link: "/",
-     icon: <AiFillHome className="icons" />,
+     icon: <AiFillHome />,
      dis: "distance0",
     },
     {
-     name: "Sobre",
-     link: "/sobre",
-     icon: <FaUserAstronaut className="icons" />,
+     name: "Resumo",
+     link: "/resumo",
+     icon: <FaUserAstronaut />,
      dis: "distance1",
     },
     {
      name: "Projetos",
      link: "/projetos/temporizador-de-foco",
-     icon: <FaPencilRuler className="icons" />,
+     icon: <FaPencilRuler />,
      dis: "distance2",
     },
     {
      name: "Contato",
      link: "/contato",
-     icon: <MdContactMail className="icons" />,
+     icon: <MdContactMail />,
      dis: "distance3",
     },
     {
      name: "Meu Linkedin",
      link: "https://www.linkedin.com/in/walace-cordeiro-dos-santos/",
-     icon: <FaLinkedin className="icons" />,
+     icon: <FaLinkedin />,
      dis: "distance4",
     },
    ];

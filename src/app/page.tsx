@@ -11,23 +11,23 @@ export default function Home() {
   <main className={styles["main"]}>
    <section className={styles["myInfo"]}>
     <div className={styles["text"]}>
-     <h1>Walace Cordeiro dos Santos</h1>
+     <h1>Olá, bem-vindo&#40;a&#41;</h1>
      <p>
-      Olá, bem-vindo&#40;a&#41; ao meu espaço digital. Sou um{" "}
-      <strong>desenvolvedor front-end</strong>, crio interfaces de usuário eficazes e{" "}
-      <strong>aplicações web responsivas</strong>. Com um olhar atento para os detalhes e um
+      Meu nome é <strong>Walace Cordeiro</strong> e esse é meu espaço digital. Sou{" "}
+      <strong>desenvolvedor front-end</strong>, crio <strong>interfaces de usuário eficazes</strong>{" "}
+      e <strong>aplicações web responsivas</strong>. Com um olhar atento para os detalhes e um
       compromisso com a qualidade, busco sempre soluções de front-end que são{" "}
-      <strong>funcionais e agradáveis</strong> aos olhos.
+      <strong>funcionais e agradáveis aos olhos</strong>.
      </p>
     </div>
     <VideoFixed />
    </section>
 
    <Section title="Projetos em destaque">
-     <Slide>
-      <Cards highlight wrap="nowrap" />
-     </Slide>
-    </Section>
+    <Slide>
+     <Cards highlight wrap="nowrap" />
+    </Slide>
+   </Section>
    <Section title="Todos meus projetos">
     <Slide>
      <Cards wrap="nowrap" />
