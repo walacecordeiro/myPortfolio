@@ -1,0 +1,71 @@
+@use "@/app/styles/variables";
+@use "@/app/styles/mixins";
+
+.img {
+ border-radius: 1rem;
+ background-color: rgba(255, 255, 255, 10%);
+ box-shadow: variables.$box-shadow;
+ backdrop-filter: blur(4rem);
+ padding: 0.2rem;
+ transition: 0.2s ease;
+
+ &:hover {
+  transform: scale(1.03);
+ }
+}
+
+.modal {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100vw;
+ height: 100vh;
+ pointer-events: none;
+
+ background-color: rgba(0, 0, 0, 80%);
+
+ overflow: hidden;
+
+ .modalContent {
+  position: relative;
+  margin: 0 1rem;
+
+  img {
+   width: 100%;
+   height: auto;
+   border: .1rem solid variables.$icon-focus;
+   border-radius: 0.4rem;
+   pointer-events: visible;
+  }
+
+  button {
+   cursor: pointer;
+   pointer-events: visible;
+   position: absolute;
+   right: 1rem;
+   top: 1rem;
+
+   border: none;
+   background-color: transparent;
+   color: #fa8072;
+   width: fit-content;
+   height: fit-content;
+
+   transition: 0.2s ease;
+
+   &:hover {
+    color: red;
+    transform: scale(1.1);
+   }
+
+   :first-child {
+    width: 4rem;
+    height: auto;
+    transition: 0.1s ease;
+   }
+  }
+ }
+}
+
+@media (max-width: 700px) {
+}

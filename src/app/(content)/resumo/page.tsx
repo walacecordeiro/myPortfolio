@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer";
 import Image from "next/image";
 import perfil from "../../../../public/perfil.webp";
 import { FaLinkedin } from "react-icons/fa";
+import ImageModal from "@/app/components/ImageModal";
 
 export default function Sobre() {
  return (
@@ -12,9 +13,13 @@ export default function Sobre() {
    <section className={style["cols2"]}>
     <div className={style["col1"]}>
      <h3>Walace Cordeiro dos Santos</h3>
-     <h6>Desenvolvedor Front-End</h6>
+     <h6>Desenvolvedor Front-End &#124; Gestor de trafego</h6>
      <p>
-     Minha rotina envolve a utilização de tecnologias fundamentais como <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte inclinação para frameworks modernos, principalmente <strong>ReactJs e NextJs</strong>. Além disso, possuo conhecimento prático com <strong>Wordpress</strong> e gestão de campanhas de publicidade digital utilizando <strong>Google Ads</strong>.
+      Minha rotina envolve a utilização de tecnologias fundamentais como{" "}
+      <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte inclinação para frameworks modernos,
+      principalmente <strong>ReactJs e NextJs</strong>. Além disso, possuo conhecimento prático com{" "}
+      <strong>Wordpress</strong> e gestão de campanhas de publicidade digital utilizando{" "}
+      <strong>Google Ads</strong>.
      </p>
     </div>
     <div className={style["col2"]}>
@@ -26,6 +31,21 @@ export default function Sobre() {
        <FaLinkedin className="icons" />
       </a>
      </div>
+    </div>
+   </section>
+
+   <section className={style["cols2"]}>
+    <div className={style["col1"]}>
+     <h4>Certificados</h4>
+     <div className={style["wrappingContent"]}>
+      <ImageModal src="/conectar-certificate.webp" />
+      <ImageModal src="/devlinks-certificate-dark.webp" />
+      <ImageModal src="/nlw-ia-certificate.webp" />
+     </div>
+    </div>
+
+    <div className={style["col2"]}>
+     <h4>Skills</h4>
     </div>
    </section>
    <Footer />

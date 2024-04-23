@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
  return (
   <html lang="pt-br" suppressHydrationWarning={true}>
-   <body className="layout" suppressHydrationWarning={true}>
+   <body id="root" className="layout" suppressHydrationWarning={true}>
     <Menu />
      <div className="page">{children}</div>
    </body>

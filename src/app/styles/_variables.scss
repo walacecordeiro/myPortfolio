@@ -9,6 +9,21 @@ $clr-white: #fff;
 $box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 4%), 0 2px 3px 0px rgba(0, 0, 0, 12%),
  0 6px 9px 0px rgba(0, 0, 0, 60%);
 
+// modal
+
+.ReactModal__Overlay {
+ opacity: 0;
+ transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+ opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+ opacity: 0;
+}
+
 // keyframes
 
 @keyframes slideInFromBottom {
