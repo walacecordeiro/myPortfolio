@@ -9,8 +9,8 @@
 
  img {
   align-self: center;
-  @include mixins.wdth-hght-borderRD(50%, fit-content, 2rem);
-  @include mixins.borderRD-boxSD-padding("", variables.$box-shadow, 0.5rem);
+  @include mixins.wdth-hght-borderRD(50%, fit-content, 1rem);
+  @include mixins.borderRD-boxSD-padding("", variables.$box-shadow, 0.3rem);
   background-color: rgba(255, 255, 255, 10%);
  }
  .infoWrapping {

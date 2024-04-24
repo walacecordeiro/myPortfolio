@@ -33,6 +33,42 @@ a {
  text-decoration: none;
 }
 
+/* ===== Scrollbar CSS ===== */
+
+// * {
+//  scrollbar-width: thin;
+//  scrollbar-color: #6b6f80 transparent;
+// }
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+ width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+ background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+ background-color: variables.$icon-default;
+ border-radius: 1rem;
+}
+
+// modal
+
+.ReactModal__Overlay {
+ opacity: 0;
+ transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+ opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+ opacity: 0;
+}
+
 // /* mobile */
 // @media (max-width: 700px) {
 

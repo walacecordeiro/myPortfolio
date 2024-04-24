@@ -5,13 +5,8 @@
 
  .page {
   padding: 4rem 0 8rem 0;
-  overflow: auto;
-  scrollbar-width: none;
+  overflow-x: hidden;
   width: 100%;
-
-  &::-webkit-scrollbar {
-   display: none;
-  }
  }
 }
 

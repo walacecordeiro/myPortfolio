@@ -8,22 +8,47 @@
  padding-right: 2rem;
 
  .cards {
-  border-radius: 4rem;
-  background-color: rgba(255, 255, 255, 10%);
+  position: relative;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 10%);
   box-shadow: variables.$box-shadow;
   backdrop-filter: blur(4rem);
-  padding: 0.8rem;
+  padding: 0.4rem;
   margin: 0rem 0rem 2rem 1rem;
 
   .imgDiv {
    @include mixins.wdth-hght-borderRD(70rem, 30rem);
    background-size: cover;
    background-position: center;
-   border-radius: 4rem;
+   border-radius: 1rem;
   }
 
   .description {
    padding: 2rem 4rem;
+   pointer-events: none;
+  }
+
+  &::before {
+   position: absolute;
+   content: "";
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: -1;
+
+   background: radial-gradient(
+    circle at var(--x) var(--y),
+    var(--colorTheme) 0%,
+    transparent 50%
+   );
+   opacity: 0;
+   border-radius: 1rem;
+   transition: 0.2s;
+  }
+
+  &:hover::before {
+   opacity: 1;
   }
  }
 }

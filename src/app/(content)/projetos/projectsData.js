@@ -8,6 +8,7 @@ export const projects = [
   link: `/projetos/temporizador-de-foco`,
   highlight: false,
   responsive: true,
+  colorTheme: "#87CEFA	",
   details: {
    boxInfo1: {
     img: "/p1ProjectGIF.gif",
@@ -36,6 +37,7 @@ export const projects = [
     link: `/projetos/cartao-de-visitas-digital`,
     highlight: true,
     responsive: true,
+    colorTheme: "#8A2BE2",
     details: {
      boxInfo1: {
       img: "/p2ProjectGIF.gif",

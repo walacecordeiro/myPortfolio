@@ -14,13 +14,18 @@ export default function Cards({ highlight, wrap }: CardProps) {
  const highlightedProjects = projects.filter((project) => project.highlight);
 
  const [isMoved, setIsMoved] = useState(false);
+ const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
 
  const handleMouseDown = () => {
   setIsMoved(false);
  };
 
- const handleMouseMove = () => {
+ const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
   setIsMoved(true);
+  const rect = (e.target as Element).getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  setLightPosition({ x, y });
  };
 
  const handleClick = (e: React.MouseEvent) => {
@@ -37,11 +42,21 @@ export default function Cards({ highlight, wrap }: CardProps) {
    {highlight &&
     highlightedProjects.map((project, i) => (
      <React.Fragment key={i}>
-      <Link href={project.link} className={styles["cards"]}>
+      <Link
+       href={project.link}
+       className={styles["cards"]}
+       onClick={handleClick}
+       style={
+        {
+         "--colorTheme": `${project.colorTheme}`,
+         "--x": `${lightPosition.x}px`,
+         "--y": `${lightPosition.y}px`,
+        } as React.CSSProperties
+       }
+      >
        <div
         className={styles["imgDiv"]}
         style={{ backgroundImage: `url(${project.imgSRC})` }}
-        onClick={handleClick}
        ></div>
        <div className={styles["description"]}>
         <h6>{project.title}</h6>
@@ -54,11 +69,21 @@ export default function Cards({ highlight, wrap }: CardProps) {
    {!highlight &&
     projects.map((project, i) => (
      <React.Fragment key={i}>
-      <Link href={project.link} className={styles["cards"]}>
+      <Link
+       href={project.link}
+       className={styles["cards"]}
+       onClick={handleClick}
+       style={
+        {
+         "--colorTheme": `${project.colorTheme}`,
+         "--x": `${lightPosition.x}px`,
+         "--y": `${lightPosition.y}px`,
+        } as React.CSSProperties
+       }
+      >
        <div
         className={styles["imgDiv"]}
         style={{ backgroundImage: `url(${project.imgSRC})` }}
-        onClick={handleClick}
        ></div>
        <div className={styles["description"]}>
         <h6>{project.title}</h6>
