@@ -52,12 +52,37 @@
     color: variables.$clr-white;
 
     svg {
-     @include mixins.wdth-hght-borderRD(auto, 3rem);
+     @include mixins.wdth-hght-borderRD(auto, 4rem);
      cursor: pointer;
      transition: 0.2s;
 
      &:hover {
       transform: scale(1.1);
+     }
+    }
+
+    .wrappingSkills {
+     display: grid;
+     gap: 1rem;
+     grid-template-columns: repeat(auto-fill, minmax(clamp(1rem, 30%, 6rem), 1fr));
+     padding: 2rem 0;
+     width: 100%;
+
+     .skills {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      > img {
+       @include mixins.wdth-hght-borderRD(100%, auto);
+      }
+
+      > p {
+       font-size: 1rem;
+       text-align: center;
+       line-height: 1rem;
+      }
      }
     }
    }
