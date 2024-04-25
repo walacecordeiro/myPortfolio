@@ -18,7 +18,14 @@ export default function projetos({ params }: paramsProjects) {
 
  if (project) {
   return (
-   <main className={style["main"]}>
+   <main
+    className={style["main"]}
+    style={
+     {
+      "--themeColor": `${project.colorTheme}`,
+     } as React.CSSProperties
+    }
+   >
     <BoxInfo
      img={details?.boxInfo1.img}
      title={project.title}

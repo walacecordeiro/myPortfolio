@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
  const [isMoved, setIsMoved] = useState(false);
  const pathName = usePathname();
+ const colorTheme = projects.find((color) => color.colorTheme);
 
  const handleMouseDown = () => {
   setIsMoved(false);
@@ -61,7 +62,7 @@ export default function RootLayout({
           }}
           href={project.link}
          >
-          Projeto {i + 1}
+          <span>Projeto {i + 1}</span>
          </Link>
         </React.Fragment>
        ))}
