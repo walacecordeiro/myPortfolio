@@ -18,7 +18,6 @@
   color: variables.$placeholder;
   background: rgba(255, 255, 255, 5%);
   border: none;
-  outline: none;
   padding: 0.9rem;
   border-radius: 0.3rem;
 
@@ -28,11 +27,18 @@
 
   &:focus {
    color: white;
+   outline: 1px solid #6b57b9;
   }
+ }
 
+ input,
+ textarea {
   &:-webkit-autofill {
-   -webkit-text-fill-color: variables.$placeholder;
+   -webkit-text-fill-color: #8FBC8F;
    transition: background-color 5000s ease-in-out 0s;
+  }
+  &:valid:not(:focus) {
+   color: #8FBC8F;
   }
  }
 
@@ -43,7 +49,8 @@
 
  button {
   cursor: pointer;
-  background-color: #6a57b9b2;
+  color: white;
+  background-color: #6b57b9;
   box-shadow: variables.$box-shadow;
   margin: 1rem 0;
   padding: 1.5rem;
@@ -51,8 +58,12 @@
   transition: 0.2s;
 
   &:hover {
-   background-color: #6b57b9;
+   background-color: #8FBC8F;
    transform: scale(1.02);
+  }
+
+  &:focus {
+   outline: 1px solid #8FBC8F;
   }
  }
 
@@ -68,9 +79,21 @@
 
   &:hover {
    p {
-    color: variables.$text-link;
+    color: #8FBC8F;
    }
    transform: scale(1.02);
+  }
+ }
+}
+
+// Mobile
+
+@media (max-width: 700px) {
+ .form {
+  input,
+  textarea,
+  button {
+   padding: 2rem;
   }
  }
 }

@@ -30,6 +30,7 @@ export default function Form() {
       placeholder="Digite seu nome"
       onChange={(e) => setName(e.target.value)}
       value={name}
+      autoComplete="name"
      />
 
      <input
@@ -37,6 +38,7 @@ export default function Form() {
       placeholder="Digite seu email"
       onChange={(e) => setEmail(e.target.value)}
       value={email}
+      autoComplete="email"
      />
 
      <textarea
