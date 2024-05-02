@@ -40,7 +40,7 @@ export default function Menu() {
       ${hover === i ? style["hoverLi"] : ""}
       `}
       >
-       {i < 4 ? (
+       {i < 3 ? (
         <Link scroll href={menu.link} legacyBehavior>
          <a onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(-1)}>
           <span
@@ -76,7 +76,7 @@ export default function Menu() {
         </a>
        )}
       </li>
-      {i === 3 && <div className={style["divider"]}></div>}
+      {i === 2 && <div className={style["divider"]}></div>}
      </React.Fragment>
     ))}
    </ul>

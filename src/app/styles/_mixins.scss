@@ -1,6 +1,11 @@
 @use "../styles/variables";
 
 @mixin fs-fc() {
+ a {
+  color: #6495ED;
+  text-decoration: none;
+ }
+
  h1 {
   color: variables.$clr-white;
   font-size: 4.8rem;
@@ -29,13 +34,14 @@
  h6 {
   color: variables.$clr-white-8;
   font-size: 1.8rem;
-  
+
   strong {
    color: variables.$clr-white;
   }
  }
 
- p, pre {
+ p,
+ pre {
   font-size: 1.6rem;
   color: variables.$clr-white-6;
 
@@ -90,14 +96,6 @@
   transform: translateY(9rem);
  }
 
- .distance3 {
-  transform: translateY(13.5rem);
- }
-
- .distance4 {
-  transform: translateY(18.6rem);
- }
-
  @media (max-width: 700px) {
   .distance0 {
    transform: translateX(-9.4rem);
@@ -109,14 +107,6 @@
 
   .distance2 {
    transform: translateX(-0.4rem);
-  }
-
-  .distance3 {
-   transform: translateX(4.1rem);
-  }
-
-  .distance4 {
-   transform: translateX(18.6rem);
   }
 
   .menuName {
