@@ -4,6 +4,7 @@
 .main {
  @include mixins.flex-column-gap(4rem);
  width: fit-content;
+ padding: 4rem 0 8rem 0;
 
  .myInfo {
   @include mixins.flex-alignIC-justifyCC(flex);

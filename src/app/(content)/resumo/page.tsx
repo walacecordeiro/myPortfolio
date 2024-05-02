@@ -17,9 +17,14 @@ export default function Sobre() {
    <main className={style["main"]}>
     <section className={style["cols2"]}>
      <div className={style["col1"]}>
-      <Image priority src={perfil} width={150} height={150} alt="Minha foto de perfil" />
-      <h3>Walace Cordeiro dos Santos</h3>
-      <h6>Desenvolvedor Front-End &#124; Gestor de tráfego</h6>
+      <div className={style["perfil"]}>
+       <Image priority src={perfil} width={150} height={150} alt="Minha foto de perfil" />
+       <div>
+        <h3>Walace Cordeiro dos Santos</h3>
+        <h6>Desenvolvedor Front-End &#124; Gestor de tráfego</h6>
+       </div>
+      </div>
+      
       <p>
        Minha rotina envolve a utilização de tecnologias fundamentais como{" "}
        <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte inclinação para frameworks modernos,
@@ -84,8 +89,8 @@ export default function Sobre() {
       <Form />
      </div>
     </section>
+    <Footer />
    </main>
-   <Footer />
   </>
  );
 }

@@ -21,7 +21,7 @@ export default function Form() {
   }
  }
  return (
-  <StickyBox style={{ zIndex: 1 }} offsetTop={0}>
+  <StickyBox style={{ zIndex: 1 }} offsetTop={30}>
    <div>
     <form className={style["form"]}>
      <h4>Contato</h4>
@@ -52,7 +52,8 @@ export default function Form() {
      <h6>Ou</h6>
 
      <Link href="https://contate.me/whatsapp-walace" target="_blank">
-      <p>conversar no whatsApp</p> <Image src={svg} alt="teste" width={20} height={20} />
+      <Image src={svg} alt="icone do whatsApp" width={25} height={25} />
+      <p>conversar no whatsApp</p>
      </Link>
     </form>
    </div>
