@@ -27,7 +27,7 @@ export default function Sobre() {
 
       <p>
        Minha rotina basicamente é usar tecnologias fundamentais como{" "}
-       <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte interesse em frameworks modernos,
+       <strong>HTML, CSS e JavaScript</strong>. Tenho um forte interesse em frameworks modernos,
        uso principalmente <strong>ReactJs e NextJs</strong>. Além disso, tenho experiência com{" "}
        <strong>Wordpress</strong> e gestão de campanhas de publicidade digital usando principalmente
        o <strong>Google Ads</strong>.
