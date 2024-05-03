@@ -30,7 +30,7 @@
 
    background: linear-gradient(rgba(255, 255, 255, 5%), rgba(255, 255, 255, 0%));
    @include mixins.borderRD-boxSD-padding("", variables.$box-shadow, "");
-   padding: 1rem 2rem;
+   padding: 1.5rem 3rem;
    color: variables.$clr-white;
 
    @include mixins.wdth-hght-borderRD(max-content, "", 9999rem);

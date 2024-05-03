@@ -26,11 +26,11 @@ export default function Sobre() {
       </div>
 
       <p>
-       Minha rotina envolve a utilização de tecnologias fundamentais como{" "}
-       <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte inclinação para frameworks modernos,
-       principalmente <strong>ReactJs e NextJs</strong>. Além disso, possuo conhecimento prático com{" "}
-       <strong>Wordpress</strong> e gestão de campanhas de publicidade digital utilizando{" "}
-       <strong>Google Ads</strong>.
+       Minha rotina basicamente é usar tecnologias fundamentais como{" "}
+       <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte interesse em frameworks modernos,
+       uso principalmente <strong>ReactJs e NextJs</strong>. Além disso, tenho experiência com{" "}
+       <strong>Wordpress</strong> e gestão de campanhas de publicidade digital usando principalmente
+       o <strong>Google Ads</strong>.
       </p>
 
       <h4>Meus certificados</h4>
@@ -42,19 +42,32 @@ export default function Sobre() {
 
       <h4>Objetivo de carreira</h4>
       <p>
-       Meu objetivo é trabalhar em um ambiente que valorize a inovação e a colaboração, onde eu
-       possa participar de projetos desafiadores e contribuir para o crescimento da empresa.
-       Acredito que minha experiência prática e minha paixão pelo desenvolvimento web me permitem
-       trazer uma perspectiva única e valiosa para qualquer equipe.
+       Meu objetivo é trabalhar em um ambiente focado na inovação, onde eu possa aprimorar minhas
+       habilidades participando de projetos em equipe e consequentemente contribuir para o
+       crescimento da empresa. Acredito que atualmente o conhecimento que tenho em desenvolvimento
+       web me permite sim somar nos resultados das empresas.
       </p>
 
       <p>
-      Além disso, estou comprometido a me manter atualizado com as últimas tendências e tecnologias no campo do desenvolvimento web. Minha experiência com ReactJs, NextJs e Wordpress, juntamente com minha habilidade para gerenciar campanhas de publicidade digital utilizando Google Ads, me permite criar soluções eficazes que atendem às necessidades dos usuários e alcançam os objetivos de negócios.
+       Além disso, estou comprometido a me manter atualizado com as últimas tendências e tecnologias
+       no campo do desenvolvimento web. Minha experiência com ReactJs, NextJs e Wordpress, junto com
+       minha habilidade em gerenciar campanhas de publicidade digital usando o Google Ads, me
+       permite criar soluções eficazes que atendem às necessidades dos usuários e alcançam os
+       objetivos de negócios.
       </p>
 
-      <p>Em suma, minha meta é aplicar minha experiência e conhecimentos para desenvolver soluções web de alta qualidade que impulsionem o sucesso dos negócios. Além de contribuir para uma equipe dinâmica e ajudar a empresa a atingir seus objetivos estratégicos, estou igualmente focado em meu próprio crescimento profissional. Estou comprometido em aprender continuamente e me adaptar às últimas tendências e tecnologias, o que acredito que não apenas beneficiará minha carreira, mas também agregará valor significativo à equipe com a qual estarei trabalhando.</p>
+      <p>
+       Para resumir, minha meta é usar minha experiência prática e conhecimento para avançar na
+       carreira profissional nesta área. Consequentemente, junto com a empresa em que eu trabalhar,
+       irei focar em atingir nossos objetivos de negócios. Então acredito que minha meta não apenas
+       irá beneficiar minha carreira, mas também pode beneficiar todos com quem estarei trabalhando.
+      </p>
 
-      <p>Agradeço sua atenção e estou ansioso para explorar como posso contribuir para o sucesso da sua empresa, enquanto também busco oportunidades para expandir minhas habilidades e conhecimentos.</p>
+      <p>
+       Se você leu até aqui, agradeço sua atenção, e fico ansioso para entender como posso
+       contribuir para os resultados da sua empresa, enquanto também busco oportunidades para
+       expandir minhas habilidades e conhecimentos.
+      </p>
      </div>
 
      <div className={style["col2"]}>
