@@ -24,7 +24,7 @@ export default function Sobre() {
         <h6>Desenvolvedor Front-End &#124; Gestor de tráfego</h6>
        </div>
       </div>
-      
+
       <p>
        Minha rotina envolve a utilização de tecnologias fundamentais como{" "}
        <strong>HTML, CSS e JavaScript</strong>. Tenho uma forte inclinação para frameworks modernos,
@@ -39,16 +39,22 @@ export default function Sobre() {
        <ImageModal src="/devlinks-certificate-dark.webp" />
        <ImageModal src="/nlw-ia-certificate.webp" />
       </div>
-      <div className={style["wrappingContent"]}>
-       <ImageModal src="/conectar-certificate.webp" />
-       <ImageModal src="/devlinks-certificate-dark.webp" />
-       <ImageModal src="/nlw-ia-certificate.webp" />
-      </div>
-      <div className={style["wrappingContent"]}>
-       <ImageModal src="/conectar-certificate.webp" />
-       <ImageModal src="/devlinks-certificate-dark.webp" />
-       <ImageModal src="/nlw-ia-certificate.webp" />
-      </div>
+
+      <h4>Objetivo de carreira</h4>
+      <p>
+       Meu objetivo é trabalhar em um ambiente que valorize a inovação e a colaboração, onde eu
+       possa participar de projetos desafiadores e contribuir para o crescimento da empresa.
+       Acredito que minha experiência prática e minha paixão pelo desenvolvimento web me permitem
+       trazer uma perspectiva única e valiosa para qualquer equipe.
+      </p>
+
+      <p>
+      Além disso, estou comprometido a me manter atualizado com as últimas tendências e tecnologias no campo do desenvolvimento web. Minha experiência com ReactJs, NextJs e Wordpress, juntamente com minha habilidade para gerenciar campanhas de publicidade digital utilizando Google Ads, me permite criar soluções eficazes que atendem às necessidades dos usuários e alcançam os objetivos de negócios.
+      </p>
+
+      <p>Em suma, minha meta é aplicar minha experiência e conhecimentos para desenvolver soluções web de alta qualidade que impulsionem o sucesso dos negócios. Além de contribuir para uma equipe dinâmica e ajudar a empresa a atingir seus objetivos estratégicos, estou igualmente focado em meu próprio crescimento profissional. Estou comprometido em aprender continuamente e me adaptar às últimas tendências e tecnologias, o que acredito que não apenas beneficiará minha carreira, mas também agregará valor significativo à equipe com a qual estarei trabalhando.</p>
+
+      <p>Agradeço sua atenção e estou ansioso para explorar como posso contribuir para o sucesso da sua empresa, enquanto também busco oportunidades para expandir minhas habilidades e conhecimentos.</p>
      </div>
 
      <div className={style["col2"]}>
