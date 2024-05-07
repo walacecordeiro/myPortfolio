@@ -8,9 +8,9 @@ import { resumeData } from "./resumeData";
 import Form from "@/app/components/Form";
 
 export default function Sobre() {
- const justExperience = resumeData.filter((skill) => skill.justExperience);
+ const justExperience = resumeData.skills.filter((skill) => skill.justExperience);
 
- const noExperienceSkill = resumeData.filter((skill) => !skill.justExperience);
+ const noExperienceSkill = resumeData.skills.filter((skill) => !skill.justExperience);
 
  return (
   <>
@@ -27,17 +27,17 @@ export default function Sobre() {
 
       <p>
        Minha rotina basicamente é usar tecnologias fundamentais como{" "}
-       <strong>HTML, CSS e JavaScript</strong>. Tenho um forte interesse em frameworks modernos,
-       uso principalmente <strong>ReactJs e NextJs</strong>. Além disso, tenho experiência com{" "}
+       <strong>HTML, CSS e JavaScript</strong>. Tenho um forte interesse em frameworks modernos, uso
+       principalmente <strong>ReactJs e NextJs</strong>. Além disso, tenho experiência com{" "}
        <strong>Wordpress</strong> e gestão de campanhas de publicidade digital usando principalmente
        o <strong>Google Ads</strong>.
       </p>
 
       <h4>Meus certificados</h4>
       <div className={style["wrappingContent"]}>
-       <ImageModal src="/conectar-certificate.webp" />
-       <ImageModal src="/devlinks-certificate-dark.webp" />
-       <ImageModal src="/nlw-ia-certificate.webp" />
+       {resumeData.certificates.map((data, i) => (
+        <ImageModal key={i} src={data.src} link={data.link}/>
+       ))}
       </div>
 
       <h4>Objetivo de carreira</h4>

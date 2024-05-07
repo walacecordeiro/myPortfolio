@@ -9,9 +9,10 @@ Modal.setAppElement("#root");
 
 type propsImageModal = {
  src: string;
+ link: string;
 };
 
-export default function ImageModal({ src }: propsImageModal) {
+export default function ImageModal({ src, link }: propsImageModal) {
  const [isOpen, setIsOpen] = useState(false);
 
  function openModal() {
@@ -41,7 +42,9 @@ export default function ImageModal({ src }: propsImageModal) {
     contentLabel="Imagem Modal"
    >
     <div className={style["modalContent"]}>
-     <img src={src} />
+     <a href={link} target="_blank" title="Clique para confirmar a validação do certificado">
+      <img src={src} />
+     </a>
      <button onClick={closeModal}>
       <IoMdCloseCircle />
      </button>

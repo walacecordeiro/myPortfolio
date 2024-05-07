@@ -18,7 +18,7 @@ export default function Menu() {
  const isPathInMenu = menu.some((obj) => obj.link === pathName);
 
  const lightAndDot = `${isPathInMenu ? style[menu[activeIndex].dis] : ""} ${
-  pathName.includes(`/projetos/${lastSegment}`) ? style[menu[2].dis] : ""
+  pathName.includes(`/projetos/${lastSegment}`) ? style[menu[1].dis] : ""
  }`;
 
  return (
@@ -33,7 +33,7 @@ export default function Menu() {
        key={i}
        className={`
       ${
-       pathName === menu.link || (i === 2 && pathName.startsWith("/projetos"))
+       pathName === menu.link || (i === 1 && pathName.startsWith("/projetos"))
         ? style["activeLi"]
         : ""
       }
@@ -45,7 +45,7 @@ export default function Menu() {
          <a onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(-1)}>
           <span
            className={`${style["icon"]} ${
-            pathName === menu.link || (i === 2 && pathName.startsWith("/projetos"))
+            pathName === menu.link || (i === 1 && pathName.startsWith("/projetos"))
              ? style["activeIcon"]
              : ""
            }`}

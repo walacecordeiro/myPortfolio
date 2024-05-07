@@ -9,15 +9,15 @@ export const menu = [
   dis: "distance0",
  },
  {
-  name: "Resumo / Contato",
-  link: "/resumo",
-  icon: <FaUserAstronaut />,
-  dis: "distance1",
- },
- {
   name: "Projetos",
   link: "/projetos/temporizador-de-foco",
   icon: <FaPencilRuler />,
+  dis: "distance1",
+ },
+ {
+  name: "Resumo / Contato",
+  link: "/resumo",
+  icon: <FaUserAstronaut />,
   dis: "distance2",
  },
  {
