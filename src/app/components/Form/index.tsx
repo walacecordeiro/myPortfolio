@@ -100,7 +100,7 @@ export default function Form() {
     isOpen={isConfirmModalOpen}
    >
     <div className={style["modalContent"]} style={{ border: "1px solid #8fbc8f" }}>
-     <p>Sua mensagem foi enviada com sucesso! Entrarei em contado em breve.</p>
+     <p>Agradeço seu contato, sua mensagem foi enviada com sucesso! Entrarei em contado em breve.</p>
      <button onClick={closeConfirmModal}>Ok, entendi</button>
     </div>
    </Modal>
@@ -111,7 +111,7 @@ export default function Form() {
       <h4>Contato</h4>
       <input
        type="text"
-       placeholder="Digite seu nome"
+       placeholder="Seu nome completo"
        onChange={(e) => setName(e.target.value)}
        value={name}
        autoComplete="name"
@@ -119,14 +119,14 @@ export default function Form() {
 
       <input
        type="text"
-       placeholder="Digite seu email"
+       placeholder="Seu e-mail mais usado"
        onChange={(e) => setEmail(e.target.value)}
        value={email}
        autoComplete="email"
       />
 
       <textarea
-       placeholder="Digite sua mensagem..."
+       placeholder="Mensagem, feedback, sugestões..."
        onChange={(e) => setMessage(e.target.value)}
        value={message}
       />
